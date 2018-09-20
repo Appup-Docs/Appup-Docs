@@ -1,0 +1,4 @@
+#!/bin/sh
+rm -rf .vuepress/config.js
+cp .vuepress/config.prod.js .vuepress/config.js
+vuepress dev

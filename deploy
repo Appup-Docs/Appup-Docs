@@ -1,0 +1,13 @@
+#!/bin/sh
+cd .vuepress
+rm -rf config.js
+cp config.test.js config.js
+cd ..
+vuepress build
+cd .vuepress
+rm -rf deploy
+mkdir deploy
+cp -r dist deploy/appup-docs
+cd deploy
+aws s3 sync . s3://dperini.com
+cd ../..
