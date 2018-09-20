@@ -17,7 +17,12 @@ You can also connect to a redis instance if your configure the plugin accordingl
 ![Redis Example](./redis.png)
 
 ## Create your own Plugins
-It is possible to create custom plugins for tailored use cases. Plugins are currently developed in Java via extending simple classes for custom behavior. Below is an example of a custom plugin where the plugin communicates with AWS S3.
+It is possible to create custom plugins for tailored use cases. Plugins are currently developed in Java or Javascript via extending simple classes for custom behavior. In order to create a custom code plugin, navigate to **Plugins** and select one of the available code plugins. You will be asked for working business code in the presented screen.
+
+![Code Plugins](./codeplugins.png)
+
+## Code - Java
+Below is an example of a custom plugin where the plugin communicates with AWS S3.
 
 You must extend `Plugin` to define configuration parameters of your plugin.
 ```Java
@@ -152,14 +157,7 @@ public class S3FileUploadStepExecutor extends Step implements StepExecutor<S3Fil
 }
 ```
 
-## Code - Java
-For Java plugins, it is easier to inject custom Java code inside of a workflow. There are builtin steps which accept code blocks as parameters which do exactly that.
-
-Inside your workflow click **Add More** on the left. Select **Developer** tab and find the **Java Code Executor** step.
-
-![Java](./java.png)
-
-It expects the class name and package name of your uploaded java class file which contains your plugin executor.
-
 ## Code - Javascript
-For Javascript plugins, you have multiple builtin steps to choose from. You can either directly write Javascript code inside of the step or select a file by giving its path. Both methods execute given Javascript logic inside the workflow to determine the result.
+It is also possible to write plugins in Javascript. Simply write Javascript in the provided box and enjoy to access your variables inside a Javascript code step in **Workflows**.
+
+![Js Plugin](./jsplugin.png)

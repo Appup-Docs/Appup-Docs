@@ -1,4 +1,5 @@
 module.exports = {
+  base: "/appup-docs/",
   title: "Appup Documentation",
   description: "Everything you need to deploy your first app!",
   themeConfig: {
