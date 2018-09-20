@@ -6,8 +6,6 @@ You will be creating these multiple times, for each feature your app needs. Ther
 
 Click Backend dropdown at the top right of your screen and choose **Category**.
 
-**TODO : This is currently under Frontend dropdown but should be under Backend as far as I know.**
-
 ![Create Category](./category.png)
 
 ---
@@ -19,8 +17,6 @@ The presented screen allows you to manage all your categories. Simply click on *
 ---
 
 Now you are ready to create your first workflow. Get back to *Home/Developer* screen and click **Workflows** to start creating your first workflow. You choose REST, CRON and EVENT workflows. These define how your workflow will be triggered. For now, click REST. You can find more info about these under [Triggers](../triggers/) section.
-
-**TODO : Cron and Event Workflows are missing in this screenshot.**
 
 ![Add Workflow](./addworkflow.png)
 
@@ -74,8 +70,17 @@ Set Cookie Example:
 ### Developer Steps
 These steps allow you to run custom code during the flow. Currently Java and Javascript is supported.
 
-* [Javascript Steps](/docs/backend/plugins/)
-* [Java Steps](/docs/backend/plugins/)
+#### Java Steps
+There are builtin steps which accept Java packages and classes inside the workflow toolset.
+
+Inside your workflow click **Add More** on the left. Select **Developer** tab and find the **Java Code Executor** step.
+
+![Java](./java.png)
+
+It expects the class name and package name of your uploaded java class file which contains your plugin executor.
+
+#### Javascript Steps
+For Javascript, you have multiple builtin steps to choose from. You can either directly write Javascript code inside of the step or select a file by giving its path. Both methods execute given Javascript logic inside the workflow to determine the result.
 
 ### Amazon Steps
 These steps allow you to utilize many functionality provided by AWS including S3, SES and many other.
@@ -85,8 +90,6 @@ Send Email Example:
 
 ### Google Steps
 These steps allow you to utilize many functionality provided by GCP including GAE and PubSub.
-
-**TODO : Example needed.**
 
 ### Utility Steps
 These steps are a bunch of utilities you may use to implement your business logic. You can set variables, check conditionals and branch according to specific cases.

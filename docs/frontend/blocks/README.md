@@ -15,4 +15,4 @@ Once you create a block, you can use it inside any page you want via its name.
 </div>
 ```
 ## Events
-**TODO : What is events in blocks?**
+**TODO : To be added.**

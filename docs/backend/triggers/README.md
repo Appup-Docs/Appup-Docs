@@ -1,7 +1,7 @@
 # Triggers
 Triggers are the different points or actions/events that executes the workflow logic.
 
-Just like workflows, Ttriggers are also categorized.
+Just like workflows, triggers are also categorized.
 
 ## REST
 These triggers invoke workflows when a specific URL is requested with an HTTP call. It supports verbs like GET, POST, PUT etc and can parse url/path parameters for workflows to inspect.
@@ -15,9 +15,5 @@ When you define a path expression for your trigger, you may use `path/{myVariabl
 ## CRON
 These triggers invoke workflows when a specific amount of time passes periodically. You can define the expression that sets the period as documented under [Cron Expressions](https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm).
 
-**TODO : Test site doesn't allow me to create CRON trigger so example is needed here.**
-
 ## EVENT
 These triggers invoke workflows when a specific event is emitted by one of your workflows. This is the way one workflow triggers the other, thus propagating multiple flows on paralel pipelines.
-
-**TODO : Test site doesn't allow me to create EVENT trigger so example is needed here.**

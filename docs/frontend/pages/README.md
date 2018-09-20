@@ -24,7 +24,12 @@ By customizing the page URL, you configure dynamic routing as well as use the ro
 
 Form your URL like `/path/to/page/:param1/:param2` to be able to access `param1` or `param2` inside your template. Once you configure the URL, your custom parameters will be available to be used in your template with ![Route URL](./routeurl.png) syntax. You will be able to run custom logic with [Handlers](/docs/frontend/handlers) using these route parameters.
 
-![Routing](./route.png)
+```html
+<h1 class="entity_params">param1 is {{$route.params.param1}}</h1>
+<h1 class="entity_params">param2 is {{$route.params.param2}}</h1>
+```
+
+All your parameters are accessible under `$route.params`.
 
 ### Javascript
 You can include custom Javascript code, scoped at the page level to incorporate any Javascript tooling of your preference. The functions included in this section will be globally available for all components throughout your page.
@@ -53,20 +58,70 @@ Appup forms a unique and easy to use way to quickly create dynamic, self validat
 
 You use an Appup form by including the following code in your template.
 
-![Form](./form.png)
+```html
+<!-- Appup form component start -->
+<appup-form  preload="pre_load_entity"
+   :workflow_params='{entity:"login-helloworld"}'
+/>
+<!-- Appup form component end -->
+```
 
 ---
 
 Then you configure what kind of inputs you want to show via global JSON.
 
-![Form JSON](./formjson.png)
+```json
+{
+	"login-helloworld": {
+		"fields": [
+			{
+				"id": 1000,
+				"type": "email",
+				"name": "email",
+				"placeholder": "Login",
+				"label": "",
+				"required": true
+			},
+			{
+				"id": 1045,
+				"type": "password",
+				"name": "password",
+				"hints": "insert hints here",
+				"placeholder": "Password",
+				"label": "",
+				"required": true,
+				"minLength": 4,
+				"maxLength": 10
+			}
+
+		],
+		"buttons": [
+			{
+				"label": "Login",
+				"variant": "primary",
+				"type": "submit",
+				"function": "onSubmit"
+
+			}
+		],
+		"post": "login"
+	}
+}
+```
 
 ---
 
-The name you provide to `:workflow-params` should match the JSON key of your form configuration. Once your configuration is complete, you will use `preload` to set a [Handler](/docs/frontend/handlers) to finalize your form logic.
+The name you provide to `:workflow-params` should match the JSON key of your form configuration. Once your configuration is complete, you will use `preload` to set a [Handler](/docs/frontend/handlers) to finalize your form logic. Use a Javascript step inside your handler, set up like below.
 
 ```javascript
-// TODO : code needed from example videos
+function(data, ui){
+	if(window.UIJSON[ui.workflow_params.entity].submit) {
+		ui.submit=window.UIJSON[ui.workflow_params.entity].submit;
+ 	}
+
+	ui.formFields = window.UIJSON[ui.workflow_params.entity].fields;
+	ui.buttons = window.UIJSON[ui.workflow_params.entity].buttons;
+}
 ```
 
 ---
@@ -75,42 +130,142 @@ The name you provide to `:workflow-params` should match the JSON key of your for
 You can configure your forms with CSS classes, code executing computationals, condition checking conditionals and dropdowns populated via remote AJAX calls.
 
 ##### Classes
+Appup forms support css classes. Just set the appropriate class like below in your global page JSON.
 ```json
-// TODO : code needed from example videos
+{
+	"myform": {
+		"fields": [ {
+				"name": "name",
+				"label": "Name",
+				"description": "Please enter your name",
+				"placeholder": "Enter your name",
+				"id": "first_name",
+				"type": "text",
+				"required": true,
+				"class":"col-sm-12 col-md-6"
+			}
+		]
+	}
+}
 ```
 
 ##### Computational
+If you'd like to run custom javascript when the use edits an input form, you can do it by setting up a computational.
 ```json
-// TODO : code needed from example videos
+{
+	"myform": {
+		"fields": [
+			{
+				"id": 1090,
+				"type": "text",
+				"label":"Friendly URL",
+				"name": "url2",
+				"required": true,
+				"computation": "'https://'+form.URL.replace(/[^a-z0-9]/gi,'').toLowerCase()+'.appup.cloud'",
+				"disabled": true,
+				"class": "col-sm-12 col-md-6"
+			}
+		]
+	}
+}
 ```
 
 ##### Conditional
+Conditionals are used to decide whether the input is shown or not by checking for the condition specified on each user input. A condional can be any boolean Javascript expression.
 ```json
-// TODO : code needed from example videos
-```
+{
+	"myform": {
+		"fields": [
+			{
+				"id": 106573,
+				"type": "text",
+				"name": "SERVER_URL",
+				"label": "Enter Server URL",
+				"required": true,
+				"condition": "this.form.cloud_type!=null && this.form.cloud_type!='Appup'",
+				"class":"col-sm-12 col-md-6 red"
+			}
+		]
+	}
 
-##### Dynamic Dropdowns
+}
+```
+##### Static Dropdowns
+Adding a dropdown filled with static data is only a matter of configuration in your global JSON.
 ```json
-// TODO : code needed from example videos
+{
+	"myform": {
+		"fields": [
+			{
+				"id": 10,
+				"type": "dropdown",
+				"name": "cloud_type",
+				"label": "Cloud Type",
+				"option": [
+					{
+						"value": null,
+						"label": "Please select an option"
+					},
+					{
+						"value": "Appup",
+						"label": "Appup"
+					},
+					{
+						"value": "Amazon",
+						"label": "Amazon"
+					},
+					{
+						"value": "Google",
+						"label": "Google"
+					}
+				],
+				"required": true,
+				"class": "col-sm-12 col-md-6 select"
+			}
+		]
+	}
+}
+```
+##### Dynamic Dropdowns
+However if the dropdown needed to be populated by dynamically queried data, you can provide a url such that when called with GET, return a JSON array of key-value pairs. You can choose which fields to consider as keys and values by setting their names in the configuration like below.
+
+```json
+{
+	"myform": {
+		"fields": [
+			{
+					"id": 10,
+					"type": "dropdown",
+					"name": "name",
+					"label": "Select Name",
+					"key_value": "id",
+					"key_label": "name",
+					"url": "https://jsonplaceholder.typicode.com/users/",
+					"required": true,
+					"class": "col-sm-12 col-md-6 select"
+			}
+		]
+	}
+}
 ```
 
 ### Collections
-**TODO : I need to access example pages to be able to write these.**
+Collections are builtin components to show repeatable data. They come in two kind, namely tables and cards.
 
-#### Table (also v-for)
-**TODO : I need to access example pages to be able to write these.**
+#### Table (v-for)
+**TODO : To be added.**
 
-#### Card (also v-if)
-**TODO : I need to access example pages to be able to write these.**
+#### Card (v-if)
+**TODO : To be added.**
 
 #### Card with Sort Key
-**TODO : I need to access example pages to be able to write these.**
+**TODO : To be added.**
 
 #### Card with Search (Events)
-**TODO : I need to access example pages to be able to write these.**
+**TODO : To be added.**
 
 #### Card with Execute Workflow (Delete example)
-**TODO : I need to access example pages to be able to write these.**
+**TODO : To be added.**
 
 ## Preview
 You can preview a page by clicking the corresponding ... inside your pages dashboard.
