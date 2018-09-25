@@ -1,4 +1,4 @@
-# Using Appup Docs
+# Developing Appup Docs
 
 ## How do I deploy the site?
 1. Install [Node.js and npm](https://nodejs.org/en/)
