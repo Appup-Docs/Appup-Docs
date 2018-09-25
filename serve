@@ -1,4 +1,6 @@
 #!/bin/sh
 rm -rf .vuepress/config.js
-cp .vuepress/config.prod.js .vuepress/config.js
+cp .vuepress/config.current.js .vuepress/config.js
+echo "Go to http://localhost:8080/appup-docs in your browser"
+echo "Deploying server, please wait..."
 vuepress dev

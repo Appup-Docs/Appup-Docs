@@ -1,5 +1,9 @@
 module.exports = {
-  base: "/appup-docs/",
+//// DONT TOUCH THIS LINE, use deploy script to set this instead//
+  base: "/appup-docs/",///////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+
+  // Below is safe to edit
   title: "Appup Documentation",
   description: "Everything you need to deploy your first app!",
   themeConfig: {

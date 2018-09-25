@@ -1,13 +1,84 @@
 #!/bin/sh
+if [ "$1" = "help" ]
+then
+  echo "\nAppup Docs Deployment Usage\n=====\n"
+  echo "Type this to your terminal to build the site:"
+  echo "     ./deploy"
+  echo "Your files will be in a folder named \"www\" in your project. Copy all the files inside of it to your web server."
+  echo ""
+  echo "Type this to your terminal if you want to put your site files in a subfolder and change base path:"
+  echo "     ./deploy /subfolder"
+  echo "Your files will be in a folder named \"www\" in your project. Copy all the files inside of it to your web server."
+  echo ""
+  echo "Type this to your terminal if you want to deploy to AWS S3:"
+  echo "    ./deploy / bucketname"
+  echo "Example: ./deploy / s3site.com"
+  echo "Your files will automatically be uploaded to your S3 bucket."
+  echo ""
+  echo "Type this to your terminal if you want to deploy to AWS s3 in a subfolder and change base path:"
+  echo "  ./deploy / bucketname"
+  echo "Example: ./deploy /subfolder s3site.com"
+  echo "Your files will automatically be uploaded to your S3 bucket/subfolder."
+  echo ""
+  echo "Type this to see usage instructions:"
+  echo "  ./deploy help"
+  echo ""
+  echo "=====\n"
+  exit 0
+fi
+echo "Building website..."
 cd .vuepress
 rm -rf config.js
-cp config.test.js config.js
+cp config.current.js config.js
+if [ -z $1 ]
+then
+  regex="s/base: \"\/appup-docs/base: \"/g"
+  sed -i -e "$regex" config.js
+else
+  if [ "$1" = "/" ]
+  then
+    regex="s/base: \"\/appup-docs/base: \"/g"
+    sed -i -e "$regex" config.js
+  else
+    regex="s/base: \"\/appup-docs/base: \"\\$1/g"
+    sed -i -e "$regex" config.js
+  fi
+fi
+rm -rf config.js-e
 cd ..
 vuepress build
 cd .vuepress
 rm -rf deploy
-mkdir deploy
-cp -r dist deploy/appup-docs
-cd deploy
-aws s3 sync . s3://dperini.com
+if [ -z $1 ]
+then
+  mv dist deploy
+else
+  if [ "$1" = "/" ]
+  then
+    mv dist deploy
+  else
+    mkdir deploy
+    cp -r dist "deploy/$1"
+    rm -rf dist
+  fi
+fi
+if [ -n "$2" ]
+then
+  cd deploy
+  aws s3 sync . "s3://$2"
+  if [ $? -eq 0 ]
+  then
+    echo "Uploaded website to AWS S3"
+  else
+    echo "Invalid S3 bucket name"
+    exit 1
+  fi
+  cd ..
+else
+  rm -rf ../www
+  mv deploy ../www
+  rm -rf config.js
+  echo "Copied files from .vuepress/dist to ./www"
+fi
 cd ../..
+echo "\nDone!"

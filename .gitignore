@@ -6,3 +6,5 @@
 
 # Deployment
 /.vuepress/deploy
+/www
+/.vuepress/config.js
