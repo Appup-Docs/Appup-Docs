@@ -8,6 +8,10 @@
 5. (Linux or Mac) type `./deploy help` to see deployment options.
 6. Choose one of the options and type it to you terminal. (i.e `./deploy / example.com`)
 
+### Deployment Options
+* HTLM Files for Copying to Own Web Server
+* Upload to AWS S3
+
 ## Where is the VuePress configuration?
 Here: *.vuepress/config.current.js*
 
@@ -23,5 +27,5 @@ Edit the sidebar in *.vuepress/config.current.js* as explained above to find a p
 ## How do I edit the landing page?
 Edit the *README.md* in the project root folder.
 
-## Hod do I demo the project locally?
+## How do I demo the project locally?
 Type `./serve` to your terminal while you are in the project directory.
