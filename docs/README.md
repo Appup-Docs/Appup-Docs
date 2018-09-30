@@ -1,5 +1,5 @@
 # Getting Started
-Welcome to Appup documentation. You can learn how to use Appup with simple steps if you follow this guide thoroughly. Feel free to suggest improvements if you find any of these topics hard to grasp.
+Welcome to Appup documentation. You can learn how to use Appup with simple steps to create and deploy your apps if you follow this guide thoroughly. Feel free to suggest improvements if you find any of these topics hard to grasp.
 
 Appup is engineered to let you publish production grade applications without needing to write a single piece of code. Ofcourse, it is within the features of Appup to run your own code if you'd like to.
 
