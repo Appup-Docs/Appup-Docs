@@ -1,5 +1,6 @@
 # Plugins
-Plugins are, in short, hooks into other technologies and COTS products. These are integration points which allow the user to seamlessly connect to other third party technologies.
+Plugins are, in short, hooks into other technologies and commercially available off-the-shelf products. These are integration points which allow the user to seamlessly connect to other third party technologies.
+They are based on a Write-once Run-anywhere type of architecture, thereby giving you economies of scale. Install or create a plugin for one use case and use it across multiple applications and technology stacks. You are no longer limited by skills-gap or burdened by writing and testing the same code multiple times. Appup will take care of the integration for you.
 
 Appup comes with lots of plugins to extend workflow functionalities. You can checkout the Market Place to find the plugin of your needs. The plugin architecture allows anyone to implement his/her own plugin in a modular manner. At the time of this is being written, there are plugins already available to connect to MySQL, Redis, 3rd Party login systems, Kafka and many other. Installing a plugin is a simple matter of configuring what is requested by the plugin.
 
@@ -17,9 +18,11 @@ You can also connect to a redis instance if your configure the plugin accordingl
 ![Redis Example](./redis.png)
 
 ## Create your own Plugins
-It is possible to create custom plugins for tailored use cases. Plugins are currently developed in Java or Javascript via extending simple classes for custom behavior. In order to create a custom code plugin, navigate to **Plugins** and select one of the available code plugins. You will be asked for working business code in the presented screen.
+It is possible to create custom plugins for tailored use cases. Plugins are currently developed in Java or Javascript via extending simple classes for custom behavior. In order to add a custom code plugin, navigate to **Plugins** and select one of the available code plugins. You will be asked for working business code in the presented screen.
 
 ![Code Plugins](./codeplugins.png)
+
+You also have the luxury of extending any of the existing plugins to different horizontals & industries and thus exponentially increasing the use cases handled by the core functionality.
 
 ## Code - Java
 Below is an example of a custom plugin where the plugin communicates with AWS S3.
