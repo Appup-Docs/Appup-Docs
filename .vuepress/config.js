@@ -16,7 +16,13 @@ module.exports = {
     sidebar: {
       '/docs/': [
         {
-          title: 'Backend',
+          {
+          title: 'What is Appup',
+          collapsable: true,
+          children: [
+            [
+          ]
+        },title: 'Backend',
           collapsable: true,
           children: [
             ['/docs/backend/', 'Backend Overview'],
