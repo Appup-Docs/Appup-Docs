@@ -1,7 +1,7 @@
 # Triggers
-Triggers are the different points or actions/events that executes the workflow logic.
-
-Just like workflows, triggers are also categorized.
+Triggers are the different points at which appup executes the workflow logic. Any event or action that needs to be handled by running specific business logic can be mapped against the respective workflow. The things that stands out here is the variety of use cases that can be covered by a single workflow by having multiple triggers of different types. Consider a few examples:
+1. A customer makes a new friend on Facebook and the business looks at her as a lead? Great ! Absolutely no problem. Just create a trigger to invoke the business logic containing workflow through an asyncrhonous EVENT trigger.
+2. The customer has just logged on to your website and made a transaction. He qualifies for your promotional discount? Simple. Use a REST trigger
 
 ## REST
 These triggers invoke workflows when a specific URL is requested with an HTTP call. It supports verbs like GET, POST, PUT etc and can parse url/path parameters for workflows to inspect.
