@@ -2,7 +2,7 @@ module.exports = {
   //// DONT TOUCH THIS LINE, use deploy script to set this instead//
     base: "/appup-docs/",///////////////////////////////////////////
   //////////////////////////////////////////////////////////////////
-  
+
     // Below is safe to edit
     title: "Appup Documentation",
     description: "Everything you need to deploy your first app!",
@@ -19,9 +19,9 @@ module.exports = {
             title: 'What is Appup?',
             collapsable: true,
             children: [
-              '/docs/what-is-appup/'
+              ['/docs/what-is-appup/', 'Overview']
             ]
-          },   
+          },
           {
             title: 'Backend',
             collapsable: true,
@@ -81,4 +81,3 @@ module.exports = {
       }
     }
   }
-  
