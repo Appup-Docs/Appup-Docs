@@ -19,7 +19,7 @@ module.exports = {
             title: 'What is Appup?',
             collapsable: true,
             children: [
-              ['/docs/what-is-appup/#what-is-appup', 'Overview'],
+              ['/docs/what-is-appup/#what-is-appup', 'Appup Overview'],
               ['/docs/what-is-appup/#why-appup', 'Why Appup?'],
               ['/docs/what-is-appup/#why-you-should-build-your-own-apps', 'Why you should build your own Apps?'],
               ['/docs/what-is-appup/#why-visual-designer', 'Why Visual Designer?'],
