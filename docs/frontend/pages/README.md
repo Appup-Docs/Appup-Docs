@@ -56,53 +56,28 @@ Appup provides many ready to use components for handling complex but very common
 ### Form
 Appup forms a unique and easy to use way to quickly create dynamic, self validating forms. They configured via global JSON and allows you to include many smart input elements such as text, number, dropdowns and buttons.
 
-You use an Appup form by including the following code in your template.
+You use an Appup form by including the following code in your template. Replace `<Your Handler Name>` with a custom handler you create to specify the form behavior.
 
 ```html
 <!-- Appup form component start -->
-<appup-form  preload="pre_load_entity"
-   :workflow_params='{entity:"login-helloworld"}'
+<appup-form  preload="<Your Handler Name>"
+   :workflow_params='{entity:"<Global JSON Key>"}'
 />
 <!-- Appup form component end -->
 ```
 
 ---
 
-Then you configure what kind of inputs you want to show via global JSON.
+Then you configure what kind of inputs you want to show via global JSON by specifying a `<Global JSON Key>`.
 
 ```json
 {
-	"login-helloworld": {
+	"<Global JSON Key>": {
 		"fields": [
-			{
-				"id": 1000,
-				"type": "email",
-				"name": "email",
-				"placeholder": "Login",
-				"label": "",
-				"required": true
-			},
-			{
-				"id": 1045,
-				"type": "password",
-				"name": "password",
-				"hints": "insert hints here",
-				"placeholder": "Password",
-				"label": "",
-				"required": true,
-				"minLength": 4,
-				"maxLength": 10
-			}
-
+			fields...
 		],
 		"buttons": [
-			{
-				"label": "Login",
-				"variant": "primary",
-				"type": "submit",
-				"function": "onSubmit"
-
-			}
+			buttons...
 		],
 		"post": "login"
 	}
@@ -121,15 +96,198 @@ function(data, ui){
 
 	ui.formFields = window.UIJSON[ui.workflow_params.entity].fields;
 	ui.buttons = window.UIJSON[ui.workflow_params.entity].buttons;
+
+	// use ui object to decide what to do
 }
 ```
 
 ---
 
-#### Form Configuration
-You can configure your forms with CSS classes, code executing computationals, condition checking conditionals and dropdowns populated via remote AJAX calls.
+#### Fields
 
-##### Classes
+Below are instructions to how to define a field by field type.
+
+##### Email Field
+This is a field that automatically checks if the given text is a legitimate email address.
+
+| Field Config | Description   |
+| ------------ | ------------- |
+| id           |               |
+| type         | Must be `email` |
+| name         |               |
+| placeholder  |               |
+| label        |               |
+| required     |               |
+
+```json
+{
+	"<Global JSON Key>": {
+		"fields": [
+			{
+				"id": 1000,
+				"type": "email",
+				"name": "email",
+				"placeholder": "Login",
+				"label": "",
+				"required": true
+			}
+		],
+		...
+	}
+}
+```
+
+##### Password Field
+This is a password field with configurable length checks.
+
+| Field Config | Description        |
+| ------------ | ------------------ |
+| id           |                    |
+| type         | Must be `password` |
+| name         |                    |
+| placeholder  |                    |
+| label        |                    |
+| required     |                    |
+| minLength    |                    |
+| maxLength    |                    |
+
+```json
+{
+	"<Global JSON Key>": {
+		"fields": [
+			{
+				"id": 1045,
+				"type": "password",
+				"name": "password",
+				"hints": "insert hints here",
+				"placeholder": "Password",
+				"label": "",
+				"required": true,
+				"minLength": 4,
+				"maxLength": 10
+			}
+		],
+		...
+	}
+}
+```
+
+##### Static Dropdown
+Adding a dropdown filled with static data is only a matter of configuration in your global JSON.
+
+| Field Config | Description        |
+| ------------ | ------------------ |
+| id           |                    |
+| type         | Must be `password` |
+| name         |                    |
+| placeholder  |                    |
+| label        |                    |
+| required     |                    |
+| minLength    |                    |
+| maxLength    |                    |
+
+```json
+{
+	"myform": {
+		"fields": [
+			{
+				"id": 10,
+				"type": "dropdown",
+				"name": "cloud_type",
+				"label": "Cloud Type",
+				"option": [
+					{
+						"value": null,
+						"label": "Please select an option"
+					},
+					{
+						"value": "Appup",
+						"label": "Appup"
+					},
+					{
+						"value": "Amazon",
+						"label": "Amazon"
+					},
+					{
+						"value": "Google",
+						"label": "Google"
+					}
+				],
+				"required": true,
+				"class": "col-sm-12 col-md-6 select"
+			}
+		]
+	}
+}
+```
+##### Dynamic Dropdown
+However if the dropdown needed to be populated by dynamically queried data, you can provide a url such that when called with GET, return a JSON array of key-value pairs. You can choose which fields to consider as keys and values by setting their names in the configuration like below.
+
+| Field Config | Description        |
+| ------------ | ------------------ |
+| id           |                    |
+| type         | Must be `password` |
+| name         |                    |
+| placeholder  |                    |
+| label        |                    |
+| required     |                    |
+| minLength    |                    |
+| maxLength    |                    |
+
+```json
+{
+	"myform": {
+		"fields": [
+			{
+					"id": 10,
+					"type": "dropdown",
+					"name": "name",
+					"label": "Select Name",
+					"key_value": "id",
+					"key_label": "name",
+					"url": "https://jsonplaceholder.typicode.com/users/",
+					"required": true,
+					"class": "col-sm-12 col-md-6 select"
+			}
+		]
+	}
+}
+```
+
+#### Buttons
+
+##### Submit Button
+This is a submit button for your forms.
+
+| Field Config | Description              |
+| ------------ | ------------------------ |
+| label        |                          |
+| variant      | `primary` or `secondary` |
+| type         | Must be `submit`         |
+| function     |                          |
+
+
+```json
+{
+	"<Global JSON Key>": {
+		...
+		"buttons": [
+			{
+				"label": "Login",
+				"variant": "primary",
+				"type": "submit",
+				"function": "onSubmit"
+			}
+		],
+		...
+	}
+}
+```
+
+#### Form Configuration
+You can configure your forms with CSS classes, code executing computationals, condition checking conditionals.
+
+##### CSS Classes
 Appup forms support css classes. Just set the appropriate class like below in your global page JSON.
 ```json
 {
@@ -190,82 +348,6 @@ Conditionals are used to decide whether the input is shown or not by checking fo
 
 }
 ```
-##### Static Dropdowns
-Adding a dropdown filled with static data is only a matter of configuration in your global JSON.
-```json
-{
-	"myform": {
-		"fields": [
-			{
-				"id": 10,
-				"type": "dropdown",
-				"name": "cloud_type",
-				"label": "Cloud Type",
-				"option": [
-					{
-						"value": null,
-						"label": "Please select an option"
-					},
-					{
-						"value": "Appup",
-						"label": "Appup"
-					},
-					{
-						"value": "Amazon",
-						"label": "Amazon"
-					},
-					{
-						"value": "Google",
-						"label": "Google"
-					}
-				],
-				"required": true,
-				"class": "col-sm-12 col-md-6 select"
-			}
-		]
-	}
-}
-```
-##### Dynamic Dropdowns
-However if the dropdown needed to be populated by dynamically queried data, you can provide a url such that when called with GET, return a JSON array of key-value pairs. You can choose which fields to consider as keys and values by setting their names in the configuration like below.
-
-```json
-{
-	"myform": {
-		"fields": [
-			{
-					"id": 10,
-					"type": "dropdown",
-					"name": "name",
-					"label": "Select Name",
-					"key_value": "id",
-					"key_label": "name",
-					"url": "https://jsonplaceholder.typicode.com/users/",
-					"required": true,
-					"class": "col-sm-12 col-md-6 select"
-			}
-		]
-	}
-}
-```
-
-### Collections
-Collections are builtin components to show repeatable data. They come in two kind, namely tables and cards.
-
-#### Table (v-for)
-**TODO : To be added.**
-
-#### Card (v-if)
-**TODO : To be added.**
-
-#### Card with Sort Key
-**TODO : To be added.**
-
-#### Card with Search (Events)
-**TODO : To be added.**
-
-#### Card with Execute Workflow (Delete example)
-**TODO : To be added.**
 
 ## Preview
 You can preview a page by clicking the corresponding ... inside your pages dashboard.

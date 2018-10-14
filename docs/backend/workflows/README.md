@@ -56,87 +56,115 @@ For each step you drop in your canvas, you have slots to connect previous and ne
 
 There are many options for you to utilize as steps.
 
-### Database Steps
+#### Database Steps
 These are steps which execute SQL commands. You can use any templating option to form your query string.
 
-| Step Configuration | Purpose                                                                             |
-| ------------------ | ----------------------------------------------------------------------------------- |
-| Database           | Select one of the databases you configured under plugins sections                   |
-| Query              | An FTL compliant text where you run your SQL select     or    A simple hardcode SQL |
+* [SQL Select](./#sql-select)
+* [SQL Select One](./#sql-select-one)
+* [SQL Insert](./#sql-insert)
+* [SQL Update](./#sql-update)
+* [SQL Delete](./#sql-delete)
+* [SQL Import](./#sql-import)
+* [SQL Export](./#sql-export)
+* [Invoke Stored Procedure](./#invoke-stored-procedure)
+* [Template](./#template)
 
-SQL Select Example:
-![SQL Select](./sqlselect.png)
 
-### Auth Steps
+#### Auth Steps
 These steps handle authentication with JWTs, OAuth, cookies and sessons.
 
-Set Cookie Example:
-![Set Cookie](./setcookie.png)
+* [RB Refresh Token](./#fb-refresh-token)
+* [JWT Step](./#jwt-step)
+* [JWT Validation](./#jwt-validation)
+* [OAuthNewToken](./#oauthnewtoken)
+* [OAuth](./#oauth)
+* [OAuthToken](./#oauthtoken)
+* [Redirect](./#redirect)
+* [Set Session](./#set-session)
+* [Set Cookie](./#set-cookie)
 
-### Developer Steps
+#### Developer Steps
 These steps allow you to run custom code during the flow. Currently Java and Javascript is supported.
 
-#### Java Steps
-There are builtin steps which accept Java packages and classes inside the workflow toolset.
+* [Java Code Executor](./#java-code-executor)
+* [JS Plugin Code](./#js-plugin-code)
+* [JS Code](./#js-code)
+* [JS Uploaded Code](./#js-uploaded-code)
+* [jedis delete](./#jedis-delete)
+* [jedis get](./#jedis-get)
+* [jedis put](./#jedis-put)
+* [Logs](./#logs)
 
-Inside your workflow click **Add More** on the left. Select **Developer** tab and find the **Java Code Executor** step.
 
-![Java](./java.png)
-
-It expects the class name and package name of your uploaded java class file which contains your plugin executor.
-
-#### Javascript Steps
-For Javascript, you have multiple builtin steps to choose from. You can either directly write Javascript code inside of the step or select a file by giving its path. Both methods execute given Javascript logic inside the workflow to determine the result.
-
-### Amazon Steps
+#### Amazon Steps
 These steps allow you to utilize many functionality provided by AWS including S3, SES and many other.
 
-Send Email Example:
-![Send Email](./sendemail.png)
+* [S3 File Upload](./#s3-file-upload)
+* [S3 File Download](./#s3-file-download)
+* [Send Email](./#send-email)
+* [Send Email with Attachment](./#send-email-with-attachment)
+* [SNS Request Answer](./#sns-request-answer)
 
-### Google Steps
+#### Google Steps
 These steps allow you to utilize many functionality provided by GCP including GAE and PubSub.
 
-### Utility Steps
+* [GAE Select](./#gae-select)
+* [GAE Delete](./#gae-delete)
+* [Google PubSup](./#google-pubsup)
+
+#### Utility Steps
 These steps are a bunch of utilities you may use to implement your business logic. You can set variables, check conditionals and branch according to specific cases.
 
-#### Rest Step
+* [Condition](./#condition)
+* [Convert Data](./#convert-data)
+* [Emit Event](./#emit-event)
+* [Workflow Execute](./#workflow-execute)
+* [If Condition](./#if-condition)
+* [K8 Deploy](./#k8-deploy)
+* [Basic OAuth](./#basic-oauth)
+* [Basic OAuth 1.0](./#basic-oauth-1.0)
+* [Simple REST](./#simple-rest)
+* [REST](./#rest)
+* [S3 PreSign URL](./#s3-presign-url)
+* [Send Response](./#send-response)
+* [Set Header](./#set-header)
+* [Set Var Multi](./#set-var-multi)
+* [Set Var](./#set-var)
+* [Switch Case](./#switch-case)
+
+### Rest
 A REST step is used for calling third party API endpoints inside of your workflow. In order to configure a REST step, you have these tabs where each of them exposes a bunch configurations to tailor the request according to your preferences.
 
-##### Settings Tab
+#### Settings
 | Step Configuration | Purpose                                                           |
 | ------------------ | ----------------------------------------------------------------- |
 | URL                | Choose a URL for the REST request                                  |
 | Method Type        | Select what kind of HTTP request you want to make                 |
 | Query Parameters   | Add as many query parameters as you want                          |
-##### Raw Body Tab
+#### Raw Body
 | Step Configuration | Purpose                                                           |
 | ------------------ | ----------------------------------------------------------------- |
 | Some Field         | Select one of the databases you configured under plugins sections |
-##### Authentication Tab
+#### Authentication
 | Step Configuration | Purpose                                                           |
 | ------------------ | ----------------------------------------------------------------- |
 | Some Field         | Select one of the databases you configured under plugins sections |
-##### Headers Tab
+#### Headers
 | Step Configuration | Purpose                                                               |
 | ------------------ | --------------------------------------------------------------------- |
 | Some Field         | Select one of the databases you configured under plugins sections     |
-##### Body Tab
+#### Body
 | Step Configuration | Purpose                                                           |
 | ------------------ | ----------------------------------------------------------------- |
 | Some Field         | Select one of the databases you configured under plugins sections |
-##### More Settings Tab
+#### More Settings
 | Step Configuration | Purpose                                                           |
 | ------------------ | ----------------------------------------------------------------- |
 | Some Field         | Select one of the databases you configured under plugins sections |
 
-Set Variable Example:
-![Set Variable](./setvar.png)
 
-## Sessions
-A session is the user's interaction with a website within a given time frame, as measured from the first touchpoint or login with the web application to the logout or exit from the web application.
-
-You can maintain variables during the user's visit inside a storage allocated for the session.
-
-Set Session Example:
-![Set Session](./setsession.png)
+TODO : add more step details below here like
+### Step Name
+#### Step Tab 1
+#### Step Tab 2
+#### Step Tab 3

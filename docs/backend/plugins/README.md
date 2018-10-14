@@ -5,28 +5,102 @@ They are based on a Write-once Run-anywhere type of architecture, thereby giving
 Appup comes with lots of plugins to extend workflow functionalities. You can checkout the Market Place to find the plugin of your needs. The plugin architecture allows anyone to implement his/her own plugin in a modular manner. At the time of this is being written, there are plugins already available to connect to MySQL, Redis, 3rd Party login systems, Kafka and many other. Installing a plugin is a simple matter of configuring what is requested by the plugin.
 Use plugins to couple with IOT, AI, RPM and more.
 
+#### MySQL Example
+![MySQL Example](./mysql.png)
 
+---
 ## Database
 A database plugin allows you to tap into and integrate with a database of your choice. By installing a database plugin, your workflows can run queries on the configured database.
 
 ### MySQL
 Installing a MySQL plugin populates the dropdown under SQL workflow steps with a database you provide. You can connect as many databases you want. Simple install multiple plugins if you desire.
 
-![MySQL Example](./mysql.png)
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Server / Host      | Server url of your db instance                                       |
+| Username           | Username for db connection                                           |
+| Password           | Password for db connection                                           |
+| Schema             | Main schema to run your queries                                      |
 
 ### Redis
 You can also connect to a redis instance if your configure the plugin accordingly. Your workflows will be able to set and retrieve values with corresponding steps.
 
-![Redis Example](./redis.png)
+---
+## AWS
 
-## Create your own Plugins
+### S3
+
+### SNS
+
+### SES Email
+
+### Serverless Lambda
+
+---
+## Event
+
+### Kafka Producer
+
+---
+## JWT
+
+### JWT Signing and Verifying
+
+---
+## OAuth
+
+### Google OAuth
+
+### Github OAuth
+
+### Twitter OAuth
+
+### LinkedIn OAuth
+
+### Aweber OAuth
+
+### Automtic OAuth
+
+### Dataporten OAuth
+
+### Etsy OAuth
+
+### Genius OAuth
+
+### HiOrdServer OAuth
+
+### Imgur OAuth
+
+### Kaixin001 OAuth
+
+### Mailru OAuth
+
+### MediaWiki OAuth
+
+### Misfit OAuth
+
+### Naver OAuth
+
+### Pinterest OAuth
+
+### Trello OAuth
+
+### Frappe OAuth
+
+### Facebook OAuth
+
+### Digg OAuth
+
+### Head Hunter OAuth
+
+---
+## Code - Create your own Plugins
 It is possible to create custom plugins for tailored use cases. Plugins are currently developed in Java or Javascript via extending simple classes for custom behavior. In order to add a custom code plugin, navigate to **Plugins** and select one of the available code plugins. You will be asked for working business code in the presented screen.
-
-![Code Plugins](./codeplugins.png)
 
 You also have the luxury of extending any of the existing plugins to different horizontals & industries and thus exponentially increasing the use cases handled by the core functionality.
 
-## Code - Java
+### Java
 Below is an example of a custom plugin where the plugin communicates with AWS S3.
 
 You must extend `Plugin` to define configuration parameters of your plugin.
@@ -54,8 +128,6 @@ public class S3BucketPlugIn extends Plugin {
 ```
 
 Once you define parameters for your plugin interface, they will be ready to be shown to the user.
-
-![Custom Plugin](./customplugin.png)
 
 The main logic is executed in the `executor` class you provide to your `@com.appup.core.annotation.Plugin` annotation, namely `S3BucketPlugInHandler` in this example.
 
@@ -162,7 +234,5 @@ public class S3FileUploadStepExecutor extends Step implements StepExecutor<S3Fil
 }
 ```
 
-## Code - Javascript
+### Javascript
 It is also possible to write plugins in Javascript. Simply write Javascript in the provided box and enjoy to access your variables inside a Javascript code step in **Workflows**.
-
-![Js Plugin](./jsplugin.png)
