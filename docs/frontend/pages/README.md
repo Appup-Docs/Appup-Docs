@@ -54,14 +54,16 @@ You will also be able to use these JSON values to automatically populate smart [
 Appup provides many ready to use components for handling complex but very common tasks such as creating and validating forms. You can utilize these components in your pages to create sophisticated controls in your UI.
 
 ### Form
-Appup forms a unique and easy to use way to quickly create dynamic, self validating forms. They configured via global JSON and allows you to include many smart input elements such as text, number, dropdowns and buttons.
+Appup forms a unique and easy to use way to quickly create dynamic, self validating forms. They are configured via global JSON and allows you to include many smart input elements such as text, number, dropdowns and buttons.
 
 You use an Appup form by including the following code in your template.
 
+
+
 ```html
 <!-- Appup form component start -->
-<appup-form  preload="pre_load_entity"
-   :workflow_params='{entity:"login-helloworld"}'
+<appup-form  preload="You handler's name"
+   :workflow_params='{entity:"you global JSON value"}'
 />
 <!-- Appup form component end -->
 ```
@@ -74,40 +76,24 @@ Then you configure what kind of inputs you want to show via global JSON.
 {
 	"login-helloworld": {
 		"fields": [
-			{
-				"id": 1000,
-				"type": "email",
-				"name": "email",
-				"placeholder": "Login",
-				"label": "",
-				"required": true
-			},
-			{
-				"id": 1045,
-				"type": "password",
-				"name": "password",
-				"hints": "insert hints here",
-				"placeholder": "Password",
-				"label": "",
-				"required": true,
-				"minLength": 4,
-				"maxLength": 10
-			}
-
+			A comma separated list of fields
 		],
 		"buttons": [
-			{
-				"label": "Login",
-				"variant": "primary",
-				"type": "submit",
-				"function": "onSubmit"
-
-			}
+			A comma separated list of buttons
 		],
-		"post": "login"
+		"post": "Your handler name"
 	}
 }
 ```
+
+A field can have these values.
+
+| Field Key   | Field Purpose                 |
+| ----------- | ----------------------------- |
+| name        | enter the input field name    |
+| id          | enter a reference number here |
+| placeholder | enter the input field text    |
+
 
 ---
 

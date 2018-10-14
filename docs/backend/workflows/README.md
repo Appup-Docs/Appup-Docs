@@ -59,6 +59,11 @@ There are many options for you to utilize as steps.
 ### Database Steps
 These are steps which execute SQL commands. You can use any templating option to form your query string.
 
+| Step Configuration | Purpose                                                                             |
+| ------------------ | ----------------------------------------------------------------------------------- |
+| Database           | Select one of the databases you configured under plugins sections                   |
+| Query              | An FTL compliant text where you run your SQL select     or    A simple hardcode SQL |
+
 SQL Select Example:
 ![SQL Select](./sqlselect.png)
 
@@ -94,6 +99,36 @@ These steps allow you to utilize many functionality provided by GCP including GA
 
 ### Utility Steps
 These steps are a bunch of utilities you may use to implement your business logic. You can set variables, check conditionals and branch according to specific cases.
+
+#### Rest Step
+A REST step is used for calling third party API endpoints inside of your workflow. In order to configure a REST step, you have these tabs where each of them exposes a bunch configurations to tailor the request according to your preferences.
+
+##### Settings Tab
+| Step Configuration | Purpose                                                           |
+| ------------------ | ----------------------------------------------------------------- |
+| URL                | Choose a URL for the REST request                                  |
+| Method Type        | Select what kind of HTTP request you want to make                 |
+| Query Parameters   | Add as many query parameters as you want                          |
+##### Raw Body Tab
+| Step Configuration | Purpose                                                           |
+| ------------------ | ----------------------------------------------------------------- |
+| Some Field         | Select one of the databases you configured under plugins sections |
+##### Authentication Tab
+| Step Configuration | Purpose                                                           |
+| ------------------ | ----------------------------------------------------------------- |
+| Some Field         | Select one of the databases you configured under plugins sections |
+##### Headers Tab
+| Step Configuration | Purpose                                                               |
+| ------------------ | --------------------------------------------------------------------- |
+| Some Field         | Select one of the databases you configured under plugins sections     |
+##### Body Tab
+| Step Configuration | Purpose                                                           |
+| ------------------ | ----------------------------------------------------------------- |
+| Some Field         | Select one of the databases you configured under plugins sections |
+##### More Settings Tab
+| Step Configuration | Purpose                                                           |
+| ------------------ | ----------------------------------------------------------------- |
+| Some Field         | Select one of the databases you configured under plugins sections |
 
 Set Variable Example:
 ![Set Variable](./setvar.png)
