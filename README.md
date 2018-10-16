@@ -5,11 +5,11 @@ actionText: Getting Started!
 actionLink: /docs/what-is-appup/
 features:
 - title: Backend
-  details: Manage databases, create REST APIs and run business logic. Appup helps you create business logic, intuitively, using several reusable steps of application functionality
+  details: Manage databases, create REST APIs and execute your business logic. Build your business logic using our drag-n-drop designer and determine its trigger points.
 - title: Frontend
-  details: Utilize ready to use UI elements to maximize the UX. Create neat and minimatlistic interfaces best by default.
+  details: Choose from readymade pages, blocks and layouts to create best-in-class neat and minimalistic interfaces.
 - title: Deploy
-  details: One click deployment to your favorite cloud service provider. Save time and resources
+  details: One click deployment to the cloud of your choice. Just select your cloud, we will host it for you in seconds.
 footer: Copyright © 2018-present Appup
 ---
 
