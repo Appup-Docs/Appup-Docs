@@ -110,14 +110,14 @@ Below are instructions to how to define a field by field type.
 ##### Email Field
 This is a field that automatically checks if the given text is a legitimate email address.
 
-| Field Config | Description   |
-| ------------ | ------------- |
-| id           |               |
-| type         | Must be `email` |
-| name         |               |
-| placeholder  |               |
-| label        |               |
-| required     |               |
+| Field Config | Description                                    |
+| ------------ | ---------------------------------------------- |
+| id           | A unique id number                             |
+| type         | Must be `email`                                |
+| name         | Field name                                     |
+| placeholder  | Placeholder text to show if the input is empty |
+| label        | HTML label for the component                   |
+| required     | Whether the component is required or not       |
 
 ```json
 {
@@ -140,16 +140,16 @@ This is a field that automatically checks if the given text is a legitimate emai
 ##### Password Field
 This is a password field with configurable length checks.
 
-| Field Config | Description        |
-| ------------ | ------------------ |
-| id           |                    |
-| type         | Must be `password` |
-| name         |                    |
-| placeholder  |                    |
-| label        |                    |
-| required     |                    |
-| minLength    |                    |
-| maxLength    |                    |
+| Field Config | Description                                    |
+| ------------ | ---------------------------------------------- |
+| id           | A unique id Number                             |
+| type         | Must be `password`                             |
+| name         | Field name                                     |
+| placeholder  | Placeholder text to show if the input is empty |
+| label        | HTML label for the component                   |
+| required     | Whether the component is required or not       |
+| minLength    | Minimum allowed length for the password         |
+| maxLength    | Maximum allowed length for the password         |
 
 ```json
 {
@@ -175,16 +175,16 @@ This is a password field with configurable length checks.
 ##### Static Dropdown
 Adding a dropdown filled with static data is only a matter of configuration in your global JSON.
 
-| Field Config | Description        |
-| ------------ | ------------------ |
-| id           |                    |
-| type         | Must be `password` |
-| name         |                    |
-| placeholder  |                    |
-| label        |                    |
-| required     |                    |
-| minLength    |                    |
-| maxLength    |                    |
+| Field Config | Description                                                 |
+| ------------ | ----------------------------------------------------------- |
+| id           | A unique id Number                                          |
+| type         | Must be `password`                                          |
+| name         | Field name                                                  |
+| placeholder  | Placeholder text to show if the input is empty              |
+| label        | HTML label for the component                                |
+| required     | Whether the component is required or not                    |
+| class        | CSS class value                                             |
+| option       | An object with the keys `value` and `label`  set like below |
 
 ```json
 {
@@ -223,16 +223,16 @@ Adding a dropdown filled with static data is only a matter of configuration in y
 ##### Dynamic Dropdown
 However if the dropdown needed to be populated by dynamically queried data, you can provide a url such that when called with GET, return a JSON array of key-value pairs. You can choose which fields to consider as keys and values by setting their names in the configuration like below.
 
-| Field Config | Description        |
-| ------------ | ------------------ |
-| id           |                    |
-| type         | Must be `password` |
-| name         |                    |
-| placeholder  |                    |
-| label        |                    |
-| required     |                    |
-| minLength    |                    |
-| maxLength    |                    |
+| Field Config | Description                                    |
+| ------------ | ---------------------------------------------- |
+| id           | A unique id Number                             |
+| type         | Must be `password`                             |
+| name         | Field name                                     |
+| label        | HTML label for the component                   |
+| required     | Whether the component is required or not       |
+| key_value    | JSON key to check for retrieved dynamic values |
+| key_label    | HTML label to fill with the values             |
+| class        | CSS class value                                |
 
 ```json
 {
@@ -248,6 +248,74 @@ However if the dropdown needed to be populated by dynamically queried data, you 
 					"url": "https://jsonplaceholder.typicode.com/users/",
 					"required": true,
 					"class": "col-sm-12 col-md-6 select"
+			}
+		]
+	}
+}
+```
+
+##### Code Editor
+If you want to include a source code editor in your form, add the following lines to your global json.
+
+| Field    | Description                                                    |
+| -------- | -------------------------------------------------------------- |
+| id       | A unique id Number                                             |
+| type     | This should be `code-editor`                                   |
+| lang     | Editor language of the text area, used for syntax highlighting |
+| name     | Name of the field                                              |
+| height   | Frame height                                                   |
+| width    | Frame width                                                    |
+| rows     | Number of rows in the editor                                   |
+| max-row  | Max number of rows                                             |
+| label    | HTML label for the component                                   |
+| required | Whether the component is required or not                       |
+| class    | CSS class value                                                |
+
+```json
+{
+	"myform": {
+		"fields": [
+			{
+			  "id": "template",
+			  "type": "code-editor",
+			  "lang": "html",
+			  "name": "TEMPLATE",
+			  "height": "500px",
+			  "width": "95%",
+			  "rows": "10",
+			  "max-row": "100",
+			  "label": "Custom css",
+			  "required": true,
+			  "class": "col-sm-12"
+			}
+		]
+	}
+}
+```
+
+
+##### HTML
+If you want to show custom HTML in your form, configure it like below.
+
+| Field Config | Description                        |
+| ------------ | ---------------------------------- |
+| id           | A unique id number                 |
+| type         | This must be `html`                |
+| html         | A valid HTML string                |
+| label        | Label to be displayed before input |
+| class        | CSS class value                    |
+
+
+```json
+{
+	"myform": {
+		"fields": [
+			{
+	    "id": 1001,  //unique id for input
+	    "type": "html", // type as html
+	    "html": "<span></span>", // html to be displayed
+	    "label": "", // .
+	    "class": "col-sm-12"  // css class to be applied.
 			}
 		]
 	}
@@ -348,6 +416,39 @@ Conditionals are used to decide whether the input is shown or not by checking fo
 
 }
 ```
+
+### Card
+Appup cards are used to show repeatable content in your pages. They come with configurable templates and easy to use properties.
+
+Use either use a card with preload handlers (just like forms) via:
+
+```html
+<appup-card preload="HANDLE NAME">
+	<template slot="section" slot-scope="{ GLOBAL JSON ARRAY NAME }">
+		INSERT YOUR TEMPLATE HERE
+	</template>
+</appup-card>
+```
+
+Set `HANDLE NAME` and `GLOBAL JSON ARRAY` with the name of your preload handler and JSON key of the array you provide in your global JSON section.
+
+Or you can use references to fill a card.
+
+```html
+<appup-card ref='REFERENCE_NAME'>
+	<template slot="section">
+		<button @click.prevent="_REFERENCE_NAME('REFERENCE_NAME', 'exec', 'HANDLER NAME', {})"> Hello </button>
+	</template>
+</appup-card>
+```
+The function you set in `@click.prevent` parameters.
+
+| Arguments        | Description                                                            |
+| ---------------- | ---------------------------------------------------------------------- |
+| First argument   | Reference name of your card                                            |
+| Second argument  | `exec` for executing a handler                                         |
+| Third argument   | Name of your handler                                                   |
+| Fourth arguments | Anything you want to send to your handler function, can be a js object |
 
 ## Preview
 You can preview a page by clicking the corresponding ... inside your pages dashboard.

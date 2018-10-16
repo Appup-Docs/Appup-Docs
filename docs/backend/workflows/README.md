@@ -95,7 +95,6 @@ These steps allow you to run custom code during the flow. Currently Java and Jav
 * [jedis put](./#jedis-put)
 * [Logs](./#logs)
 
-
 #### Amazon Steps
 These steps allow you to utilize many functionality provided by AWS including S3, SES and many other.
 
@@ -120,13 +119,11 @@ These steps are a bunch of utilities you may use to implement your business logi
 * [Emit Event](./#emit-event)
 * [Workflow Execute](./#workflow-execute)
 * [If Condition](./#if-condition)
-* [K8 Deploy](./#k8-deploy)
-* [Basic OAuth](./#basic-oauth)
-* [Basic OAuth 1.0](./#basic-oauth-1.0)
-* [Simple REST](./#simple-rest)
+* [REST OAuth](./#basic-oauth)
+* [REST OAuth Basic](./#basic-oauth-1.0)
 * [REST](./#rest)
 * [S3 PreSign URL](./#s3-presign-url)
-* [Send Response](./#send-response)
+* [Send Step](./#send-response)
 * [Set Header](./#set-header)
 * [Set Var Multi](./#set-var-multi)
 * [Set Var](./#set-var)
@@ -545,48 +542,224 @@ This step publishes data to a Pubsub topic.
 | Payload to publish | Data to send to the topic   |
 
 ### Condition
-### Convert Data
-### Emit Event
-### Workflow Execute
-### If Condition
-### K8 Deploy
-### Basic OAuth
-### Basic OAuth 1.0
-### Simple REST
-### REST
-### S3 PreSign URL
-### Send Response
-### Set Header
-### Set Var Multi
-### Set Var
-### Switch Case
+This step checks for a composite condition formed by logical "and"/"or" statements. The configured check will be evaluated in the form `(x1 and x2 and x3...) or (y1 and y2 and y3...)`.
 
-### Rest
-A REST step is used for calling third party API endpoints inside of your workflow. In order to configure a REST step, you have these tabs where each of them exposes a bunch configurations to tailor the request according to your preferences.
+Available options are `less than`, `less than or equals`, `equal to`, `greater than`, `greater than or equals`, `not equals`, `in`, `contains`.
 
 #### Settings
-| Step Configuration | Purpose                                                           |
-| ------------------ | ----------------------------------------------------------------- |
-| URL                | Choose a URL for the REST request                                 |
-| Method Type        | Select what kind of HTTP request you want to make                 |
-| Query Parameters   | Add as many query parameters as you want                          |
-#### Raw Body
-| Step Configuration | Purpose                                                           |
-| ------------------ | ----------------------------------------------------------------- |
-| Some Field         | Select one of the databases you configured under plugins sections |
-#### Authentication
-| Step Configuration | Purpose                                                           |
-| ------------------ | ----------------------------------------------------------------- |
-| Some Field         | Select one of the databases you configured under plugins sections |
+| Step Configuration | Purpose                              |
+| ------------------ | ------------------------------------ |
+| And                | Press + to add a check               |
+| Or                 | Press + to add a check               |
+| Output Variable    | Variable name to store the output in |
+#### General
+| Step Configuration | Purpose                          |
+| ------------------ | -------------------------------- |
+| Select Type        | Used template, handlebars or FTL |
+
+### Convert Data
+This step converts `json`, `xml` or `yaml` to each other.
+
+#### General
+| Step Configuration | Purpose                           |
+| ------------------ | --------------------------------- |
+| Convert From       | Source file type                  |
+| Convert To         | Destination file type             |
+| Output Variable    | Variable name to store the result |
+| Value Type         | Source expression template format |
+| Data               | Data to convert                   |
+
+### Emit Event
+This step emits an event to be captured by an Appup trigger.
+
+#### Settings
+| Step Configuration | Purpose                    |
+| ------------------ | -------------------------- |
+| Topic              | Topic to send the event    |
+| Value              | Sent event value           |
+| Output Variable    | Output to store the result |
+#### General
+| Step Configuration | Purpose                                     |
+| ------------------ | ------------------------------------------- |
+| Plugin             | Choose on of the relevant installed plugins |
+#### Help
+| Step Configuration           | Purpose |
+| ---------------------------- | ------- |
+| Write your own function here | TODO    |
+
+### Workflow Execute
+This step executes another Appup Workflow.
+
+#### Settings
+| Step Configuration | Purpose                                         |
+| ------------------ | ----------------------------------------------- |
+| Exception Handle   | What to do in case the executed workflows fails |
+| Workflow ID        | Choose a workflow to execute                    |
+
+### If Condition
+This steps checks for a single condition.
+
+Available options are `less than`, `less than or equals`, `equal to`, `greater than`, `greater than or equals`, `not equals`, `in`, `contains`.
+
+#### Settings
+| Step Configuration | Purpose                              |
+| ------------------ | ------------------------------------ |
+| Output Variable    | Variable name to store the result in |
+| if                 | Type of checked values               |
+| variable 1         | First variable to compare            |
+| Compare this       | Compare type                         |
+| variable 2         | Second variable to compare           |
+| Select type        | Template type to use in comparison   |
+
+### REST OAuth
+This step executes a REST request with one of your configured OAuth tokens.
+
+#### Settings
+| Step Configuration | Purpose                                      |
+| ------------------ | -------------------------------------------- |
+| URL                | URL to send the request                      |
+| Method Type        | HTTP method type                             |
+| Query Parameters   | Query parameters to send, click + to add one |
+#### Auth Info
+| Step Configuration | Purpose               |
+| ------------------ | --------------------- |
+| Consumer key       | OAuth Consumer key    |
+| Consumer Secret    | OAuth Consumer secret |
+| Token              | Access token          |
+| Secret             | Access secret         |
 #### Headers
-| Step Configuration | Purpose                                                               |
-| ------------------ | --------------------------------------------------------------------- |
-| Some Field         | Select one of the databases you configured under plugins sections     |
+| Step Configuration | Purpose                             |
+| ------------------ | ----------------------------------- |
+| Headers            | Click + to add HTTP request headers |
 #### Body
-| Step Configuration | Purpose                                                           |
-| ------------------ | ----------------------------------------------------------------- |
-| Some Field         | Select one of the databases you configured under plugins sections |
+| Step Configuration | Purpose                             |
+| ------------------ | ----------------------------------- |
+| Body               | Click + to add HTTP body parameters |
 #### More Settings
-| Step Configuration | Purpose                                                           |
-| ------------------ | ----------------------------------------------------------------- |
-| Some Field         | Select one of the databases you configured under plugins sections |
+| Step Configuration | Purpose                             |
+| ------------------ | ----------------------------------- |
+| Result             | Variable name to save the result in |
+| Select Type        | Template type to                    |
+
+### REST OAuth Basic
+This step is used to make REST call with basic authentication.
+
+#### Settings
+| Step Configuration | Purpose                                      |
+| ------------------ | -------------------------------------------- |
+| URL                | URL to send the request                      |
+| Method Type        | HTTP method type                             |
+| Query Parameters   | Query parameters to send, click + to add one |
+#### Auth Info
+| Step Configuration | Purpose             |
+| ------------------ | ------------------- |
+| Username           | Basic auth username |
+| Password           | Basic auth password |
+#### Headers
+| Step Configuration | Purpose                             |
+| ------------------ | ----------------------------------- |
+| Headers            | Click + to add HTTP request headers |
+#### Body
+| Step Configuration | Purpose                             |
+| ------------------ | ----------------------------------- |
+| Body               | Click + to add HTTP body parameters |
+#### More Settings
+| Step Configuration | Purpose                             |
+| ------------------ | ----------------------------------- |
+| Result             | Variable name to save the result in |
+| Select Type        | Template type to                    |
+
+### REST
+This step is used for calling third party API endpoints inside of your workflow. In order to configure a REST step, you have these tabs where each of them exposes a bunch configurations to tailor the request according to your preferences.
+
+#### Settings
+| Step Configuration | Purpose                                      |
+| ------------------ | -------------------------------------------- |
+| URL                | URL to send the request                      |
+| Method Type        | HTTP method type                             |
+| Query Parameters   | Query parameters to send, click + to add one |
+#### Headers
+| Step Configuration | Purpose                             |
+| ------------------ | ----------------------------------- |
+| Headers            | Click + to add HTTP request headers |
+#### Body
+| Step Configuration | Purpose                             |
+| ------------------ | ----------------------------------- |
+| Body               | Click + to add HTTP body parameters |
+#### More Settings
+| Step Configuration | Purpose                             |
+| ------------------ | ----------------------------------- |
+| Result             | Variable name to save the result in |
+| Select Type        | Template type to                    |
+
+### Send Step
+This step is used to send respones to the connecting HTTP clients.
+
+### Settings
+| Step Configuration    | Purpose                        |
+| --------------------- | ------------------------------ |
+| Variable Name         | Variable to send               |
+| Response Code         | HTTP status code to send       |
+| Response Content Type | HTTP content type header value |
+| Template              | Variable template type         |
+
+### S3 PreSign URL
+This step is used to presign an S3 request for clients.
+
+#### Settings
+| Step Configuration | Purpose                                    |
+| ------------------ | ------------------------------------------ |
+| Name               | Name of the signed file                    |
+| Output Variable    | Variable name to store the result in       |
+| S3 File Expiration | Expiration time in seconds                 |
+| S3 Bucket Name     | S3 bucket name                             |
+| Select Template    | Template to use in data, handlebars or FTL |
+| Method Type        | S3 request method type                     |
+| Plugin             | S3 plugin to use                           |
+
+### Set Header
+This step is used to set response header parameters for connecting HTTP clients.
+
+### More Settings
+| Step Configuration | Purpose                          |
+| ------------------ | -------------------------------- |
+| Template           | Template to use in header values |
+### Headers
+| Step Configuration | Purpose                             |
+| ------------------ | ----------------------------------- |
+| Headers            | Click + to add HTTP request headers |
+
+### Set Var Multi
+This step is used to set multiple local variables.
+
+#### Settings
+| Step Configuration           | Purpose                                   |
+| ---------------------------- | ----------------------------------------- |
+| Is JSON                      | Tells if the stored data is JSON          |
+| Name                         | Name of the stored data                   |
+| Variables                    | Variable names to set, click + to add one |
+| Select Template              | Template to use in variable expressions   |
+| Encode or decode from base64 | Whether the stored data is base64 or not  |
+| Charset to use               | Data charset to use in variables          |
+
+### Set Var
+This step is used to set a single local variable.
+
+#### Settings
+| Step Configuration           | Purpose                                  |
+| ---------------------------- | ---------------------------------------- |
+| Enter name of the variable   | Name of the variable                     |
+| Value                        | Value to store in variable               |
+| Select Template              | Template to use in variable expressions  |
+| Encode or decode from base64 | Whether the stored data is base64 or not |
+| Charset to use               | Data charset to use in variables         |
+
+### Switch Case
+This step is used to check for a pattern matching condition.
+
+#### Settings
+| Step Configuration         | Purpose                             |
+| -------------------------- | ----------------------------------- |
+| Template Type              | Template to use in case expressions |
+| Switch Case Input Variable | Variable to check for patterns      |
+| Cases                      | Click + to add a pattern case       |
