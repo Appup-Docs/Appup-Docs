@@ -5,7 +5,7 @@ They are based on a Write-once Run-anywhere type of architecture, thereby giving
 Appup comes with lots of plugins to extend workflow functionalities. You can checkout the Market Place to find the plugin of your needs. The plugin architecture allows anyone to implement his/her own plugin in a modular manner. At the time of this is being written, there are plugins already available to connect to MySQL, Redis, 3rd Party login systems, Kafka and many other. Installing a plugin is a simple matter of configuring what is requested by the plugin.
 Use plugins to couple with IOT, AI, RPM and more.
 
-#### MySQL Example
+#### Here is what you should see when you click a plugin
 ![MySQL Example](./mysql.png)
 
 ---
