@@ -5,8 +5,10 @@ They are based on a Write-once Run-anywhere type of architecture, thereby giving
 Appup comes with lots of plugins to extend workflow functionalities. You can checkout the Market Place to find the plugin of your needs. The plugin architecture allows anyone to implement his/her own plugin in a modular manner. At the time of this is being written, there are plugins already available to connect to MySQL, Redis, 3rd Party login systems, Kafka and many other. Installing a plugin is a simple matter of configuring what is requested by the plugin.
 Use plugins to couple with IOT, AI, RPM and more.
 
-#### Here is what you should see when you click a plugin
+**Below is what a plugin install page looks like.**
 ![MySQL Example](./mysql.png)
+
+In most cases, you will be shown a modal asking you to enter the credentials for your plugin configuration.
 
 ---
 ## Database
@@ -26,73 +28,262 @@ Installing a MySQL plugin populates the dropdown under SQL workflow steps with a
 ### Redis
 You can also connect to a redis instance if your configure the plugin accordingly. Your workflows will be able to set and retrieve values with corresponding steps.
 
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Host               | Server url of your db instance                                       |
 ---
 ## AWS
+Installing an AWS plugins allows to use common services provided by AWS in your workfows.
 
 ### S3
+This plugin allows you to read and write to your S3 buckets in your workflows.
+
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Access Key         | Access key for your AWS IAM Account                                  |
+| Secret Key         | Secret key for your AWS IAM Account                                  |
+| Region             | Region of your AWS instances                                         |
 
 ### SNS
+This plugin allows you query SNS queues in your workflows.
+
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Access Key         | Access key for your AWS IAM Account                                  |
+| Secret Key         | Secret key for your AWS IAM Account                                  |
+| Region             | Region of your AWS instances                                         |
 
 ### SES Email
+This plugin allows you to send SES emails in your workflows.
+
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Access Key         | Access key for your AWS IAM Account                                  |
+| Secret Key         | Secret key for your AWS IAM Account                                  |
+| Region             | Region of your AWS instances                                         |
 
 ### Serverless Lambda
+This plugin allows you to access Lambda functions in your workflows.
+
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Access Key         | Access key for your AWS IAM Account                                  |
+| Secret Key         | Secret key for your AWS IAM Account                                  |
+| Region             | Region of your AWS instances                                         |
+| Qualifier          | Qualifier of your Lambda function                                    |
 
 ---
 ## Event
+Installing Event plugins let you work with third party message queues and pubsub services.
 
 ### Kafka Producer
+This plugin allows you to subscribe to your Kafka producer in your workflows.
+
+| Fields              | Description                                                          |
+| ------------------- | -------------------------------------------------------------------- |
+| Plugin Config Name  | Choose a name to easily recognize your plugin inside workflow editor |
+| Brokers             | Comma separated host list written as `host1:port1, host2:port2`      |
+| Username            | Username to connect to your hosts                                    |
+| Password            | Password to connect to your hosts                                    |
+| Autocommit Interval | in miliseconds                                                       |
+| Session Timeout     | in miliseconds                                                       |
 
 ---
 ## JWT
+JWT plugins allows you to sign and validate JWT tokens in your workflows.
 
 ### JWT Signing and Verifying
+This plugin allows you to configure a key for JWT signing.
+
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Sign Key           | Your private key for signing JWTs                                    |
 
 ---
 ## OAuth
+OAuth plugins allows you to login to third party services via Oauth protocol.
 
-### Google 
+### Google
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### Github 
+### Github
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### Twitter 
+### Twitter
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### LinkedIn 
+### LinkedIn
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### Aweber 
+### Aweber
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### Automtic 
+### Automtic
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### Dataporten 
+### Dataporten
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### Etsy 
+### Etsy
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### Genius 
+### Genius
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### HiOrdServer 
+### HiOrdServer
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### Imgur 
+### Imgur
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### Kaixin001 
+### Kaixin001
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### Mailru 
+### Mailru
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### MediaWiki 
+### MediaWiki
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### Misfit 
+### Misfit
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### Naver 
+### Naver
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### Pinterest 
+### Pinterest
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### Trello 
+### Trello
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### Frappe 
+### Frappe
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### Facebook 
+### Facebook
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### Digg 
+### Digg
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
-### Head Hunter 
+### Head Hunter
+| Fields             | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| Plugin Config Name | Choose a name to easily recognize your plugin inside workflow editor |
+| Key                | Oauth key                                                            |
+| Secret             | Oauth secret                                                         |
+| Scope              | Scope of your authorization                                          |
 
 ---
 ## Code - Create your own Plugins

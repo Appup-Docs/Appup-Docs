@@ -73,14 +73,14 @@ These are steps which execute SQL commands. You can use any templating option to
 #### Auth Steps
 These steps handle authentication with JWTs, OAuth, cookies and sessons.
 
-* [RB Refresh Token](./#fb-refresh-token)
+* [FB Refresh Token](./#fb-refresh-token)
 * [JWT Step](./#jwt-step)
 * [JWT Validation](./#jwt-validation)
 * [OAuthNewToken](./#oauthnewtoken)
 * [OAuth](./#oauth)
 * [OAuthToken](./#oauthtoken)
 * [Redirect](./#redirect)
-* [Set Session](./#set-session)
+* [Session Step](./#session-step)
 * [Set Cookie](./#set-cookie)
 
 #### Developer Steps
@@ -132,13 +132,232 @@ These steps are a bunch of utilities you may use to implement your business logi
 * [Set Var](./#set-var)
 * [Switch Case](./#switch-case)
 
+### SQL Select
+An SQL Select step allows you to retrieve rows from a database table with a given SQL query. You can access your local variables with FTL or handlerbars.
+
+#### General
+| Step Configuration | Purpose                                               |
+| ------------------ | ----------------------------------------------------- |
+| Database           | Choose one of the databases you installed as a plugin |
+| Query              | Specify your SQL query written in FTL or handlebars   |
+| Template           | Handlerbars or FTL, your query syntax                 |
+| Set Result         | Variable to store the retrieved rows                  |
+
+### SQL Select One
+An SQL Select One step allows you to retrieve the first row from a database table with a given SQL query. You can access your local variables with FTL or handlerbars.
+
+#### General
+| Step Configuration | Purpose                                               |
+| ------------------ | ----------------------------------------------------- |
+| Database           | Choose one of the databases you installed as a plugin |
+| Query              | Specify your SQL query written in FTL or handlebars   |
+| Template           | Handlerbars or FTL, your query syntax                 |
+| Set Result         | Variable to store the retrieved rows                  |
+
+### SQL Insert
+An SQL Insert step allows you to insert into a database table a given row. You can access your local variables with FTL or handlerbars.
+
+#### General
+| Step Configuration | Purpose                                               |
+| ------------------ | ----------------------------------------------------- |
+| Database           | Choose one of the databases you installed as a plugin |
+| Query              | Specify your SQL query written in FTL or handlebars   |
+| Template           | Handlerbars or FTL, your query syntax                 |
+| Set Result         | Variable to store the retrieved rows                  |
+
+### SQL Insert
+An SQL Insert step allows you to insert into a database table a given row. You can access your local variables with FTL or handlerbars.
+
+#### General
+| Step Configuration | Purpose                                               |
+| ------------------ | ----------------------------------------------------- |
+| Database           | Choose one of the databases you installed as a plugin |
+| Query              | Specify your SQL query written in FTL or handlebars   |
+| Template           | Handlerbars or FTL, your query syntax                 |
+| Set Result         | Variable to store the retrieved rows                  |
+
+### SQL Update
+An SQL Update step allows you to update existing rows in a database table. You can access your local variables with FTL or handlerbars.
+
+#### General
+| Step Configuration | Purpose                                               |
+| ------------------ | ----------------------------------------------------- |
+| Database           | Choose one of the databases you installed as a plugin |
+| Query              | Specify your SQL query written in FTL or handlebars   |
+| Template           | Handlerbars or FTL, your query syntax                 |
+| Set Result         | Variable to store the retrieved rows                  |
+
+### SQL Delete
+An SQL Delete step allows you to delete rows from a database table. You can access your local variables with FTL or handlerbars.
+
+#### General
+| Step Configuration | Purpose                                               |
+| ------------------ | ----------------------------------------------------- |
+| Database           | Choose one of the databases you installed as a plugin |
+| Query              | Specify your SQL query written in FTL or handlebars   |
+| Template           | Handlerbars or FTL, your query syntax                 |
+| Set Result         | Variable to store the retrieved rows                  |
+
+### SQL Import
+An SQL Import step allows you import multiple rows into a database table via given file. You can access your local variables with FTL or handlerbars.
+
+#### General
+| Step Configuration | Purpose                                                 |
+| ------------------ | ------------------------------------------------------- |
+| Database           | Choose one of the databases you installed as a plugin   |
+| File URL           | Source file to import from                              |
+| Header Mappings    | The mapping rules to specify which columns are affected |
+| Table              | Table to import into                                    |
+| Count              | Number of rows to import                                |
+| Output Variable    | A variable name to store the result                     |
+
+### SQL Export
+An SQL Export step allows you export multiple rows from a database table into a file. You can access your local variables with FTL or handlerbars.
+
+#### General
+| Step Configuration | Purpose                                               |
+| ------------------ | ----------------------------------------------------- |
+| Database           | Choose one of the databases you installed as a plugin |
+| Value              | Value                                                 |
+| Type               | Type                                                  |
+
+### Invoke Stored Procedure
+This step allows you to execute a stored procedure in your database schema.
+
+#### General
+| Step Configuration          | Purpose                                               |
+| --------------------------- | ----------------------------------------------------- |
+| Database                    | Choose one of the databases you installed as a plugin |
+| Call stored procedure query | SQL Query to execute the stored procedure             |
+
+### Template
+Set a template SQL query to reuse in other steps multiple times via a name.
+
+#### General
+| Step Configuration | Purpose                                    |
+| ------------------ | ------------------------------------------ |
+| Value              | Template string to store                   |
+| Template           | Template format, either handlerbars or FTL |
+| Set Result         | Variable name to store the template        |
+
+### FB Refresh Token
+This step refresh your Facebook OAuth token.
+
+#### General
+| Step Configuration | Purpose                                      |
+| ------------------ | -------------------------------------------- |
+| Select type        | Template format, either handlerbars or FTL   |
+| Plugin             | Choose one of the installed Facebook plugins |
+| Output Variable    | Variable name to store the result            |
+| Access token       | Access token                                 |
+
+### JWT Step
+This step creates a JWT for latter use.
+
+#### General
+| Step Configuration | Purpose                                                                                       |
+| ------------------ | --------------------------------------------------------------------------------------------- |
+| Output Variable    | Variable name to store the token                                                              |
+| Select Type        | Template format to use in claims                                                              |
+| Claims             | Claims to add as key value pairs, click + to add new claims, use templates to store variables |
+| Subject            | Subject the token is relevant to                                                              |
+| JWT plugin         | Key to encrypt your JWT                                                                       |
+
+### JWT Validation
+This step validates a previously created JWT.
+
+#### Settings
+| Step Configuration | Purpose                                              |
+| ------------------ | ---------------------------------------------------- |
+| Source             | Expression to add to validation, click + to add more |
+| Name               | Name of your validation                              |
+| Output Variable    | A variabe name to store the result                   |
+| Select Type        | Template format to use in expressions                |
+| JWT plugin         | Key to decrypt your JWT                              |
+
+### OAuthNewToken
+This step requests a new token from your 3rd party service.
+
+#### Info
+| Step Configuration | Purpose                                   |
+| ------------------ | ----------------------------------------- |
+| Select Type        | Template format to use, handlebars or FTL |
+| Plugin             | Your 3rd party OAuth plugin               |
+| Output Variable    | A variabe name to store the result        |
+| Refresh Token      | Refresh Token                             |
+
+### OAuth
+This step starts an OAuth flow with one of your 3rd party services.
+
+#### Info
+| Step Configuration | Purpose                                                              |
+| ------------------ | -------------------------------------------------------------------- |
+| Select Type        | Template format to use, handlebars or FTL                            |
+| Plugin             | Your 3rd party OAuth plugin                                          |
+| Redirect URL       | URL to redirect after OAuth setup                                    |
+| Parameters         | Key/value pair to include in your OAuth request, click + to add more |
+
+### OAuthToken
+This step concludes an OAuth flow with one of your 3rd party services.
+
+#### Info
+| Step Configuration | Purpose                                                              |
+| ------------------ | -------------------------------------------------------------------- |
+| Select Type        | Template format to use, handlebars or FTL                            |
+| Plugin             | Your 3rd party OAuth plugin                                          |
+| Output Variable    | Variable nme to store the token                                      |
+| Parameters         | Key/value pair to include in your OAuth request, click + to add more |
+
+### Redirect
+This step redirects a client to a given URL.
+
+#### Settings
+| Step Configuration | Purpose                       |
+| ------------------ | ----------------------------- |
+| URL                | Choose a URL to redirect to   |
+| Status Code        | Status Code to send to client |
+
+### Session Step
+This step stores variables in a session.
+
+#### Settings
+| Step Configuration | Purpose                                      |
+| ------------------ | -------------------------------------------- |
+| Name               | Name of the session                          |
+| Value              | Value to store in session as template string |
+| Select Template    | Template to use in value, handlebars or FTL  |
+
+### Set Cookie
+This step sets a cookie to be stored in the client.
+
+#### Settings
+| Step Configuration                      | Purpose                                         |
+| --------------------------------------- | ----------------------------------------------- |
+| Enter the name of the cookie            | Can be any name                                 |
+| Enter the value to be set in the cookie | A templte string                                |
+| Template type                           | Handlebars or FTL                               |
+| Cookie Path                             | Path to apply to cookie relative to host domain |
+| Cookie Domain                           | Host domain                                     |
+| Cookie Max Age                          | in miliseconds                                  |
+| Cookie Version                          | Optional version string                         |
+#### More Options
+| Step Configuration    | Purpose                                        |
+| --------------------- | ---------------------------------------------- |
+| Cookie Expiry minutes | Expiration time                                |
+| Discard Cookie        | Choose whether you want to discard it          |
+| Secured Cookie        | Choose whether you want to encrypt your cookie |
+| Is it a HTTP cookie   | Choose whether the cookie is availabl in HTTP  |
+| Cookie Comment        | A helper text to recognize the cookie          |
+#### Help
+Here are help instruction about cookies.
+
 ### Rest
 A REST step is used for calling third party API endpoints inside of your workflow. In order to configure a REST step, you have these tabs where each of them exposes a bunch configurations to tailor the request according to your preferences.
 
 #### Settings
 | Step Configuration | Purpose                                                           |
 | ------------------ | ----------------------------------------------------------------- |
-| URL                | Choose a URL for the REST request                                  |
+| URL                | Choose a URL for the REST request                                 |
 | Method Type        | Select what kind of HTTP request you want to make                 |
 | Query Parameters   | Add as many query parameters as you want                          |
 #### Raw Body
