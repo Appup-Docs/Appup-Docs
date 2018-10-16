@@ -3,9 +3,16 @@ sidebarDepth: 1
 ---
 # What is Appup?
 
-Appup is an “Application as a Service” platform. Following are the two constituents of the
-platform:
-1. A simple, robust & easy to use app builder having an in-built drag & drop interface
+Have you ever run into any of the following scenarios:
+You need to make an enterprise app for your client quickly that’ll help them make a ton of money and give you a customer for life.
+You are using a commercial out of the box product but want to extend its functionality to accommodate your custom requirements.
+Development is slow and fraught with bugs. Lack of resources is hitting the top and bottom line.
+Business is running well and the company wants to start tracking & maximising revenues.
+You know the next million dollar idea but lack the resources or funds to make it a reality.
+
+Appup is the solution for you ! 
+It is an “Application as a Service” platform that is built up of three components:
+1. A simple, robust & easy to use app builder having an in-built drag & drop interface. This can be used both across frontend as well as backend of an application.
 Appup has a powerful & well-structured app frontend & backend builder. The ease of use of its in-built drag and drop designer helps incorporate any business logic in days if not hours.
 2. An apps marketplace that contains several AI, IoT and many other latest innovations.
 The distinguishing feature of the apps marketplace is the availability of a number of micro-apps & plugins on the marketplace.  All these are offered on a pay per use model.
