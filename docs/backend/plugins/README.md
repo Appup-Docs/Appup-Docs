@@ -50,49 +50,49 @@ You can also connect to a redis instance if your configure the plugin accordingl
 ---
 ## OAuth
 
-### Google OAuth
+### Google 
 
-### Github OAuth
+### Github 
 
-### Twitter OAuth
+### Twitter 
 
-### LinkedIn OAuth
+### LinkedIn 
 
-### Aweber OAuth
+### Aweber 
 
-### Automtic OAuth
+### Automtic 
 
-### Dataporten OAuth
+### Dataporten 
 
-### Etsy OAuth
+### Etsy 
 
-### Genius OAuth
+### Genius 
 
-### HiOrdServer OAuth
+### HiOrdServer 
 
-### Imgur OAuth
+### Imgur 
 
-### Kaixin001 OAuth
+### Kaixin001 
 
-### Mailru OAuth
+### Mailru 
 
-### MediaWiki OAuth
+### MediaWiki 
 
-### Misfit OAuth
+### Misfit 
 
-### Naver OAuth
+### Naver 
 
-### Pinterest OAuth
+### Pinterest 
 
-### Trello OAuth
+### Trello 
 
-### Frappe OAuth
+### Frappe 
 
-### Facebook OAuth
+### Facebook 
 
-### Digg OAuth
+### Digg 
 
-### Head Hunter OAuth
+### Head Hunter 
 
 ---
 ## Code - Create your own Plugins
