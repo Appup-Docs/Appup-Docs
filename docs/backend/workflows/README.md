@@ -351,6 +351,216 @@ This step sets a cookie to be stored in the client.
 #### Help
 Here are help instruction about cookies.
 
+### Java Code Executor
+This step executes a custom Java code.
+
+#### Settings
+| Step Configuration | Purpose                        |
+| ------------------ | ------------------------------ |
+| Class Name         | Class to execute               |
+| Package Name       | The package class is stored in |
+
+### JS Plugin Code
+This steps executes a custom Javascript code stored in plugin.
+
+#### General
+| Step Configuration | Purpose                    |
+| ------------------ | -------------------------- |
+| code               | Stored js code plugin name |
+
+### JS Code
+This steps executes a hardcoded Javascript code.
+
+#### Settings
+| Step Configuration | Purpose                                      |
+| ------------------ | -------------------------------------------- |
+| Source             | Source code for executed javascript function |
+
+### JS Uploaded Code
+This steps executes a stored Javascript file contents.
+
+#### Settings
+| Step Configuration     | Purpose                                |
+| ---------------------- | -------------------------------------- |
+| File Path              | The place where your js file is stored |
+| Function               | Function to execute in your file       |
+| Return Output Variable | Variable name to store output result   |
+
+### jedis delete
+This step deletes a value from a Redis database via jedis.
+
+#### General
+| Step Configuration  | Purpose                        |
+| ------------------- | ------------------------------ |
+| Template            | Handlebars or FTL              |
+| Select Data Type    | Data type to delete            |
+| Enter the key value | Key to delete                  |
+| jedis Plugins       | The Redis plugin you installed |
+
+### jedis get
+This step gets a value from a Redis database via jedis.
+
+#### General
+| Step Configuration  | Purpose                        |
+| ------------------- | ------------------------------ |
+| Template            | Handlebars or FTL              |
+| Select Data Type    | Data type to get               |
+| Enter the key value | Key to get                     |
+| jedis Plugins       | The Redis plugin you installed |
+
+### jedis put
+This step puts a value into a Redis database via jedis.
+
+#### General
+| Step Configuration  | Purpose                        |
+| ------------------- | ------------------------------ |
+| Template            | Handlebars or FTL              |
+| Select Data Type    | Data type to put               |
+| Enter the key value | Key to put                     |
+| Value to save       | Value to save inside db        |
+| jedis Plugins       | The Redis plugin you installed |
+
+### Logs
+This step logs developer messages to the console.
+
+#### Settings
+| Step Configuration | Purpose                          |
+| ------------------ | -------------------------------- |
+| Log Levels         | Choose the level you want to use |
+| Message            | Message to log                   |
+
+### S3 File Upload
+This steps allows you to upload file to an S3 bucket.
+
+#### General
+| Step Configuration | Purpose                                  |
+| ------------------ | ---------------------------------------- |
+| File Name          | Name of the file                         |
+| File Data          | File contents as template string         |
+| Output Variable    | Output variable name to store the result |
+| Bucket Name        | S3 Bucket name                           |
+| Content Type       | Content type of the uploaded file        |
+| Type               | Data type, either handlebars or FTL      |
+| File Access        | Access permissions                       |
+| S3 Plugin          | One of the installed S3 plugins to use   |
+
+### S3 File Download
+This steps downloads a file from an S3 bucket.
+
+#### General
+| Step Configuration | Purpose                                  |
+| ------------------ | ---------------------------------------- |
+| File Name          | Name of the file                         |
+| Output Variable    | Output variable name to store the result |
+| Type               | Data type, either handlebars or FTL      |
+| Bucket Path        | Path of the downloaded file              |
+| S3 Plugin          | One of the installed S3 plugins to use   |
+
+### Send Email
+This steps sends an emal via SES.
+
+#### General
+| Step Configuration | Purpose                                 |
+| ------------------ | --------------------------------------- |
+| Character Encoding | Encoding to use in body                 |
+| Select Type        | Template type for body text             |
+| Email Plugin       | One of the installed SES plugins to use |
+#### Info
+| Step Configuration | Purpose                               |
+| ------------------ | ------------------------------------- |
+| From (name)        | Sender's Name                         |
+| From (email)       | Sender's Email Address                |
+| To                 | Recipients Email Address              |
+| CC                 | Comma separated CC email adress list  |
+| BCC                | Comma separated BCC email adress list |
+| Subject            | Email subject                         |
+#### Body
+| Step Configuration | Purpose      |
+| ------------------ | ------------ |
+| Body Type          | Text or HTML |
+| Body               | Body to send |
+
+### Send Email with Attachment
+This steps sends an emal via SES with added attachment.
+
+#### General
+| Step Configuration | Purpose                                 |
+| ------------------ | --------------------------------------- |
+| Character Encoding | Encoding to use in body                 |
+| Select Type        | Template type for body text             |
+| Config Set         | Configuration                           |
+| File Key           | File to send as attachment              |
+| Email Plugin       | One of the installed SES plugins to use |
+#### Info
+| Step Configuration | Purpose                               |
+| ------------------ | ------------------------------------- |
+| From (name)        | Sender's Name                         |
+| From (email)       | Sender's Email Address                |
+| To                 | Recipients Email Address              |
+| CC                 | Comma separated CC email adress list  |
+| BCC                | Comma separated BCC email adress list |
+| Subject            | Email subject                         |
+#### HTML
+HTML body of sent email, can be empty.
+#### Text
+Text body of sent email, can be empty.
+
+### SNS Request Answer
+TODO
+
+### GAE Select
+This steps retrieves data from a GAE db.
+
+#### General
+| Step Configuration | Purpose                          |
+| ------------------ | -------------------------------- |
+| GAE Database       | One of the installed GAE plugins |
+| Type               | Database type                    |
+#### Settings
+| Step Configuration | Purpose                            |
+| ------------------ | ---------------------------------- |
+| Output Variable    | Variable name to store the results |
+
+### GAE Delete
+This steps deletes data from a GAE db.
+
+#### General
+| Step Configuration | Purpose                          |
+| ------------------ | -------------------------------- |
+| GAE Database       | One of the installed GAE plugins |
+| Type               | Database type                    |
+#### Settings
+| Step Configuration | Purpose                            |
+| ------------------ | ---------------------------------- |
+| Output Variable    | Variable name to store the results |
+
+### Google PubSup
+This step publishes data to a Pubsub topic.
+
+#### Publish
+| Step Configuration | Purpose                     |
+| ------------------ | --------------------------- |
+| Topic Name         | Topic to publish into       |
+| JSON File Location | Pubsub config file location |
+| Payload to publish | Data to send to the topic   |
+
+### Condition
+### Convert Data
+### Emit Event
+### Workflow Execute
+### If Condition
+### K8 Deploy
+### Basic OAuth
+### Basic OAuth 1.0
+### Simple REST
+### REST
+### S3 PreSign URL
+### Send Response
+### Set Header
+### Set Var Multi
+### Set Var
+### Switch Case
+
 ### Rest
 A REST step is used for calling third party API endpoints inside of your workflow. In order to configure a REST step, you have these tabs where each of them exposes a bunch configurations to tailor the request according to your preferences.
 
@@ -380,10 +590,3 @@ A REST step is used for calling third party API endpoints inside of your workflo
 | Step Configuration | Purpose                                                           |
 | ------------------ | ----------------------------------------------------------------- |
 | Some Field         | Select one of the databases you configured under plugins sections |
-
-
-TODO : add more step details below here like
-### Step Name
-#### Step Tab 1
-#### Step Tab 2
-#### Step Tab 3
