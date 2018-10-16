@@ -73,7 +73,7 @@ module.exports = {
             ]
           },
           {
-            title: 'Recommandations',
+            title: 'Recommendations',
             collapsable: true,
             children: [
               ['/docs/recommendations/', 'Best Practices'],
