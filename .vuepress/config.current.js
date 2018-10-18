@@ -20,10 +20,10 @@ module.exports = {
             collapsable: true,
             children: [
               ['/docs/what-is-appup/#what-is-appup', 'Appup Overview'],
-              ['/docs/what-is-appup/#why-appup', 'Why Appup?'],
-              ['/docs/what-is-appup/#why-you-should-build-your-own-apps', 'Why you should build your own Apps?'],
               ['/docs/what-is-appup/#why-visual-designer', 'Why Visual Designer?'],
-              ['/docs/what-is-appup/#how-to-publish-the-apps-for-worldwide-use', 'How to Publish the Apps for Worldwide use?'],
+              ['/docs/what-is-appup/#why-appup', 'Why Appup?'],
+              ['/docs/what-is-appup/#build-your-own-apps', 'Build your own Apps'],
+              ['/docs/what-is-appup/#how-to-publish-the-apps-for-use', 'How to publish the Apps for use?'],
             ]
           },
           {
@@ -77,8 +77,9 @@ module.exports = {
             title: 'TrainingVideos',
             collapsable: true,
             children: [
-              ['/docs/trainingvideos/', 'Overview'],
-              
+              ['/docs/trainingvideos/#overview', 'Overview'],
+              ['/docs/trainingvideos/backend/', 'Backend'],
+              ['/docs/trainingvideos/frontend/', 'Frontend'],
             ]
           }
         ]

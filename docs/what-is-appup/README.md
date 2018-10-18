@@ -14,13 +14,13 @@ Appup is the solution for you !
 It is an “Application as a Service” platform that is built up of two components:
 1. A simple, robust & easy to use app builder having an in-built visual designer. This can be used across both, frontend as well as backend of an application. The backend interface allows you to intuitively organize business logic using tiny standalone lego like blocks of application functionality while the frontend interface helps create complimenting, minimalistic user interfaces already perfected over dozens of iterations. 
 2. An apps marketplace that contains several AI, IoT and many other such innovative apps.You can also host your own apps in the appup marketplace. All these are offered on a pay per use model.
-The distinguishing feature of the apps marketplace is the availability of a number of micro-apps &plugins that help you cater your custom requirements with little effort.  
+The distinguishing feature of the apps marketplace is the availability of a number of micro-apps & plugins that help you cater your custom requirements with little effort.  
 
 The above two components of the platform go hand-in-hand with each other and revolutionise creation & usage of apps, not to mention the huge cost & value advantage that this brings to the end users. This is all made possible by the simple deployment process.
 * Ease of Deployment:
 Appup allows you to publish the app with all its dependencies to any cloud of your choice with a click of a button. The scaling and management of the apps is also completely automated, thereby saving you the overhead of hiring for new technologies outside of the purview of your business and additional operational expenses. All these savings are in addition to those that come as a result of the use of the visual designer.
 
-* Why Visual Designer:
+## Why Visual Designer:
 The visual designer has a simple and flexible drag & drop interface. 
 It reduces your development time from days to hours and helps you cut down your development costs  as well. You can also easily compensate for the skills gaps in your team, across different stages of your product lifecycle, with our ready to use plugins.
 

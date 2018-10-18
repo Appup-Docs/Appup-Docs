@@ -36,9 +36,9 @@ Appup currently supports two templating languages to use data inside workflows.
 1. [Free Marker Templates (FTL)](https://freemarker.apache.org/)
 2. [Handlebars](https://handlebarsjs.com/)
 
-::: danger Note
-Use ![Tripple Curly](./tripplecurly.png) instead of ![Double Curly](./doublecurly.png) in order not to accidentally escape your strings in Handlebars.
-:::
+Handlebars can be invoked as follows
+* ![Double Curly](./doublecurly.png)
+* ![Tripple Curly](./tripplecurly.png)
 
 The expression inside your templating choice can be any variable you set with a *SetVar* step.
 
