@@ -55,4 +55,5 @@ All apps created on appup are deployed and made available for use as immutable d
 
 The appup architecture allows the customer to take his app & its data with him, to any cloud he wants to. It is not binding on him to remain with any particular vendor.
 You can easily move through different development cycles as well as phases in the product lifecycle, using the various easy deployment and provisioning options available.
-                    Start with our industry leading platform today. Lead the way
+
+ Start with our industry leading platform today. Lead the way

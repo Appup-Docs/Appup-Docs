@@ -1,5 +1,7 @@
 # Pages
-Pages are the top level scope holders. They have a name, a URL and a template describing what to show. When you create a page, you use regular HTML as well as custom defined **Blocks** to populate it according to your needs.
+Define the pages you need in your application here. A page in appup is a collection of blocks and handlers. They are the top level scope holders. Let us look at how to define a page in appup:
+
+A page has a name, a URL and a template describing what to show. When you create a page, you use regular HTML as well as custom defined **Blocks** to populate it according to your needs.
 
 In order to create a page, select **Pages** from your dashboard and click Add Pages button.
 

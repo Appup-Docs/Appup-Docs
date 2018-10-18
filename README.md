@@ -5,7 +5,7 @@ actionText: Getting Started!
 actionLink: /docs/what-is-appup/
 features:
 - title: Backend
-  details: Manage databases, create REST APIs and execute your business logic. Build your business logic using our drag-n-drop designer and determine its trigger points.
+  details: Build1 your business logic using our drag-n-drop designer and determine its trigger points. Manage databases, create REST APIs and execute your business logic.
 - title: Frontend
   details: Choose from readymade pages, blocks and layouts to create best-in-class neat and minimalistic interfaces.
 - title: Deploy

@@ -62,14 +62,8 @@ module.exports = {
             collapsable: true,
             children: [
               ['/docs/examples/', 'Common Examples'],
-              '/docs/examples/hellomysql/',
-              '/docs/examples/salesforce-contacts/',
               '/docs/examples/google-oauth/',
-              '/docs/examples/pagination/',
               '/docs/examples/login-jwt/',
-              '/docs/examples/contacts-app/',
-              '/docs/examples/helpdesk/',
-              '/docs/examples/crm/'
             ]
           },
           {
@@ -77,8 +71,14 @@ module.exports = {
             collapsable: true,
             children: [
               ['/docs/recommendations/', 'Best Practices'],
-              '/docs/recommendations/code-syntax/',
-              '/docs/recommendations/steps/'
+            ]
+          },
+          {
+            title: 'TrainingVideos',
+            collapsable: true,
+            children: [
+              ['/docs/trainingvideos/', 'Overview'],
+              
             ]
           }
         ]
