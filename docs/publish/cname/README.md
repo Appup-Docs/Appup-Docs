@@ -1,5 +1,7 @@
 # CNAME
-Each cloud you create is defined with a domain name provided under `<cloud-name>.appup.cloud`. You can choose to wrap this with a custom name representing your project or company. Simply copy the URL (without the `https://` part) in your cloud dashboard into your DNS configuration as a CNAME record.
+Each cloud you create is defined with a domain name provided under `<cloud-name>.appup.cloud`. You can choose to wrap this with a custom name representing your project or company. We will  allow you to add multiple CNAMES. 
+
+Once you are done, simply copy the URL (without the `https://` part) in your cloud dashboard into your DNS configuration as a CNAME record. You are ready now.
 
 ![URL](./url.png)
 
