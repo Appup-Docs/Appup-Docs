@@ -1,21 +1,26 @@
 # Pages
-Define the pages you need in your application here. A page in appup is a collection of blocks and handlers. They are the top level scope holders. Let us look at how to define a page in appup:
+Appup pages can go live in as early as ten minutes if you know your requirement and our platform well.  It gives you a variety of "ready-to-deploy" templates and several different components & readymade blocks that you can quickly add to the template selected to suit your page requirements. And above all, these are all available without any compromise on quality or performance. Try it now ! 
+
+A page in appup is a collection of blocks and handlers. They are the top level scope holders. 
+There are four different code sections you can include in your pages. 
+* A template
+* Javascript code
+* CSS rules  
+* global JSON objects.
+
+We will talk about them in detail later. Let us look at how to define a page in appup:
 
 A page has a name, a URL and a template describing what to show. When you create a page, you use regular HTML as well as custom defined **Blocks** to populate it according to your needs.
 
 In order to create a page, select **Pages** from your dashboard and click Add Pages button.
-
 ![Add Pages](./addpages.png)
 
 ---
 
 You will be asked for a name, a URL and page contents.
-
 ![Page](./page.png)
 
-## Sections
-There are four different code sections you can include in your pages. A template, Javascript code, CSS rules and global JSON objects.
-
+## Page Sections
 ### Template
 Templates are the main HTML that represents your pages. It supports all the vanilla HTML elements in your disposal. Moreover, it has the capability to inject [Blocks](/docs/frontend/blocks) which allows you to reuse existing components multiple times with only copying a single line of code.
 

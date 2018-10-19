@@ -13,15 +13,15 @@ Consider an e-commerce app. Here, the common use-cases are customer placing an o
 
 Workflow: It is the business logic that needs to be executed at the occurrence of specific business events. 
 Lets pick one use case from the previous ones discussed. For instance, placing an order of an item from the store. Here, the business logic would be as follows:
-a. Check availability of the item in the inventory
-b. Send status to the customer
-c. Check customer balance in wallet
-d. Take customer order
+* Check availability of the item in the inventory
+* Send status to the customer
+* Check customer balance in wallet
+* Take customer order if there is sufficient balance
 All these steps can be incorporated in the business logic attached to the event trigger above.
 
-Filters: Filters are, in-short, actions that must be run before or after the workflow steps are executed for the respective business events. They are associated to the same expressions that are mapped to the respective triggers/worflows.
+Filters: Filters are, in-short, actions that must be run before or after the workflow steps are executed for the respective business events. They are commonly used for authentication and session management. You can associate filters to the same expressions that are mapped to the respective triggers/worflows.
 
-Coming to the example above, consider that for all customers satisfying a particular demographic we want to provide specific discounts. This conditional logic for a filtered set of customers can be taken care of using filters.
+With respect to the use case above, lets consider that for all customers satisfying a particular demographic, the business decides to provide discounts. Such conditional logic for a filtered set of customers can easily be taken care of by using this feature.
 
 Plugins: They are hooks provided into the latest technologies and can be used out of the box to enable integration with diverse third party products having different underlying technologies.
 In our example earlier, most of the different individual steps of the use case involve accessing the database. This database can be easily setup using a plugin. Subsequent use of the DB does not require any further modifications to the app.

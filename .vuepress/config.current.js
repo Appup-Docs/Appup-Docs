@@ -67,13 +67,6 @@ module.exports = {
             ]
           },
           {
-            title: 'Recommendations',
-            collapsable: true,
-            children: [
-              ['/docs/recommendations/', 'Best Practices'],
-            ]
-          },
-          {
             title: 'TrainingVideos',
             collapsable: true,
             children: [

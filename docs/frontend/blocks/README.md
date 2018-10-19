@@ -1,5 +1,7 @@
 # Blocks
-Blocks are reusable components you create in Appup. They can be simple widgets, action bars or menus. You create blocks just like you create pages.
+Blocks are reusable components available in Appup. You can create them as well for future usage. They can be simple widgets, action bars or menus. 
+
+You create blocks just like you create pages.
 
 ![Add Block](./addblock.png)
 

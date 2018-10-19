@@ -1,8 +1,10 @@
 # Plugins
-Plugins are, in short, hooks into other technologies and commercially available off-the-shelf products. These are integration points which allow the user to seamlessly connect to other third party technologies.
-They are based on a Write-once Run-anywhere type of architecture, thereby giving you economies of scale. Install or create a plugin for one use case and use it across multiple applications and technology stacks. You are no longer limited by skills-gap or burdened by writing and testing the same code multiple times. Appup will take care of the integration for you.
+Plugins are hooks into other technologies and commercially available off-the-shelf products. These are integration points which allow the user to seamlessly connect to other third party technologies.
+They are provided with the sole intention of making it much easier for the end customer to create his apps while bypassing reptitive tasks. In fact you can do much better than just bypassing them, you can evaluate these tasks and accordingly create a plugin variant that can help resolving many such use cases that extend the earlier functionality. 
 
-Appup comes with lots of plugins to extend workflow functionalities. You can checkout the Market Place to find the plugin of your needs. The plugin architecture allows anyone to implement his/her own plugin in a modular manner. At the time of this is being written, there are plugins already available to connect to MySQL, Redis, 3rd Party login systems, Kafka and many other. Installing a plugin is a simple matter of configuring what is requested by the plugin.
+Plugins are based on a Write-once Run-anywhere type of architecture, thereby giving you economies of scale. Install or create a plugin for one use case and use it across multiple applications and technology stacks. You are no longer limited by skills-gap or burdened by writing and testing the same code multiple times. Just make a plugin for you requirement, leave the responsibility of its integration with your existing product stack to Appup.
+There are lots of plugins available to extend your workflow functionalities. You can checkout the Market Place to find the plugin of your needs. The architecture allows anyone to implement his/her own plugin in a modular manner. At the time of this being written, there are plugins already available to connect to MySQL, Redis, 3rd Party login systems, Kafka and many other such technologies. Installing a plugin is a simple matter of configuring what is requested by the plugin.
+
 Use plugins to couple with IOT, AI, RPM and more.
 
 **Below is what a plugin install page looks like.**

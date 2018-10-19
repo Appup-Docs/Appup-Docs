@@ -1,6 +1,7 @@
 # Workflows
 
-Workflows allow you to define your business logic with nodes called **Steps** dragged and dropped with your mouse on an empty canvas. It is a visual tool and allows you to sketch a pipeline of various operations without writing a single line of code.
+Appup gives you workflows to define business logic for generic business flows independent of the end to end use case. This not only gives you the flexibility to quickly adapt a existing workflow to a new business requirement, it also allows you to manage your IT needs effectively.
+Using workflows you can define your business logic with nodes called **Steps** dragged and dropped with your mouse on an empty canvas. It is a visual tool and allows you to sketch a pipeline of various operations without writing a single line of code.
 This helps breaks down an application functionality intuitively into several logical steps.  You can map this against the triggering event or action and in minutes take care of the complete end-to-end use case. It is that simple.
 
 You will be creating these multiple times, for each feature your app needs. Therefore it is best to categorize your workflows in a logical manner to be able keep track of what belongs where. Pick and select items from a category to create several different use cases. Stack the steps together like lego blocks to create more robust & comprehensive functionalities. Creating a category is as simple as giving a name.
@@ -56,7 +57,7 @@ For each step you drop in your canvas, you have slots to connect previous and ne
 
 There are many options for you to utilize as steps.
 
-#### Database Steps
+#### Database 
 These are steps which execute SQL commands. You can use any templating option to form your query string.
 
 * [SQL Select](./#sql-select)
@@ -70,7 +71,7 @@ These are steps which execute SQL commands. You can use any templating option to
 * [Template](./#template)
 
 
-#### Auth Steps
+#### Auth
 These steps handle authentication with JWTs, OAuth, cookies and sessons.
 
 * [FB Refresh Token](./#fb-refresh-token)
@@ -79,14 +80,14 @@ These steps handle authentication with JWTs, OAuth, cookies and sessons.
 * [OAuthNewToken](./#oauthnewtoken)
 * [OAuth](./#oauth)
 * [OAuthToken](./#oauthtoken)
-* [Redirect](./#redirect)
-* [Session Step](./#session-step)
-* [Set Cookie](./#set-cookie)
 
-#### Developer Steps
+#### Developers
 These steps allow you to run custom code during the flow. Currently Java and Javascript is supported.
 
 * [Java Code Executor](./#java-code-executor)
+* [Redirect](./#redirect)
+* [Session Step](./#session-step)
+* [Set Cookie](./#set-cookie)
 * [JS Plugin Code](./#js-plugin-code)
 * [JS Code](./#js-code)
 * [JS Uploaded Code](./#js-uploaded-code)
@@ -95,7 +96,7 @@ These steps allow you to run custom code during the flow. Currently Java and Jav
 * [jedis put](./#jedis-put)
 * [Logs](./#logs)
 
-#### Amazon Steps
+#### Amazon
 These steps allow you to utilize many functionality provided by AWS including S3, SES and many other.
 
 * [S3 File Upload](./#s3-file-upload)
@@ -104,7 +105,7 @@ These steps allow you to utilize many functionality provided by AWS including S3
 * [Send Email with Attachment](./#send-email-with-attachment)
 * [SNS Request Answer](./#sns-request-answer)
 
-#### Google Steps
+#### Google
 These steps allow you to utilize many functionality provided by GCP including GAE and PubSub.
 
 * [GAE Select](./#gae-select)
