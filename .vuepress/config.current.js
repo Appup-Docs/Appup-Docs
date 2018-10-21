@@ -67,12 +67,12 @@ module.exports = {
             ]
           },
           {
-            title: 'TrainingVideos',
+            title: 'Training Videos',
             collapsable: true,
             children: [
-              ['/docs/trainingvideos/#overview', 'Overview'],
-              ['/docs/trainingvideos/backend/', 'Backend'],
-              ['/docs/trainingvideos/frontend/', 'Frontend'],
+              ['/docs/training-videos/#overview', 'Overview'],
+              ['/docs/training-videos/backend/', 'Backend'],
+              ['/docs/training-videos/frontend/', 'Frontend'],
             ]
           }
         ]
