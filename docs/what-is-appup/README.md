@@ -3,7 +3,7 @@ sidebarDepth: 1
 ---
 # What is Appup?
 
-Have you ever run into a any of the following scenarios:
+Have you ever run into any of the following scenarios:
 * You need to make an enterprise app for your client quickly that’ll help them make a ton of money and give you a customer for life.
 * You are using a commercial out of the box product but want to extend its functionality to accommodate your custom requirements.
 * Development is slow and fraught with bugs. Lack of resources is hitting the top and bottom line.
