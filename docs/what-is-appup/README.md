@@ -18,21 +18,20 @@ The distinguishing feature of the apps marketplace is the availability of a numb
 
 The above two components of the platform go hand-in-hand with each other and revolutionise creation & usage of apps, not to mention the huge cost & value advantage that this brings to the end users. This is all made possible by the simple deployment process.
 * Ease of Deployment:
-Appup allows you to publish the app with all its dependencies to any cloud of your choice with a click of a button. The scaling and management of the apps is also completely automated, thereby saving you the overhead of hiring for new technologies outside of the purview of your business and additional operational expenses. All these savings are in addition to those that come as a result of the use of the visual designer.
+Appup allows you to publish the app with all its dependencies to any cloud of your choice with a click of a button. The scaling and management of the apps is also completely automated, thereby saving you the overhead of hiring for new technologies outside of the purview of your business and additional operational expenses. All these savings are in addition to those that come as a result of the use of the visual designer. Lets understand more about the visual designer.
 
 ## Why Visual Designer:
-The visual designer has a simple and flexible drag & drop interface. 
-It reduces your development time from days to hours and helps you cut down your development costs  as well. You can also easily compensate for the skills gaps in your team, across different stages of your product lifecycle, with our ready to use plugins.
+The visual designer has a simple and flexible drag & drop interface. This interface is further enriched by a comprehensive set of nodes that offer varied and self contained blocks of varied business logic which helps you stitch together your requirements effortlessly.
+It reduces your development time from days to hours and helps you cut down your development costs  as well. You can also easily compensate for the skills gaps in your team, across different stages of your product lifecycle, with our ready to use plugins. Integrate with everything, rapidly and easily.
 
 ## Why Appup?
 Appup helps reduce the time to market of any app to one tenth of that of the industry standard and cut apps development & maintenance costs by a little over 50%. Appup offers the following benefits for you:
 
-* Lower costs 
+* Lower costs. Pay for the usage and not number of users
 * Security
+* Easy customization & integration
 * Lower time to market
 * Easy to use “Drag and Drop” interface
-* Pay for the usage and not number of users
-* Easy customization & integration
 * Central governance
 
 All the above factors together, we are able to provide a well rounded solution to our loyal customers. We count businesses, IT companies and independent developers among them.
@@ -47,7 +46,7 @@ To understand why, please see the below:
 * Proprietary process flows
 * Make money of your apps
 
-You can stitch together the apps and plugins very easily using the Visual Designer.
+You can integrate the apps and plugins very easily using the Visual Designer with your business logic.
 
 ## How to Publish the Apps for use?
 Appup combines containerisation of apps with a microservices architecture to deliver a secure “Build once, Deploy everywhere” platform. This enables the customers to create an app and publish it over appup or any other cloud of his choice. 
@@ -56,4 +55,4 @@ All apps created on appup are deployed and made available for use as immutable d
 The appup architecture allows the customer to take his app & its data with him, to any cloud he wants to. It is not binding on him to remain with any particular vendor.
 You can easily move through different development cycles as well as phases in the product lifecycle, using the various easy deployment and provisioning options available.
 
- Start with our industry leading platform today. Lead the way
+ Start with our industry leading platform today. Be the market leader here
