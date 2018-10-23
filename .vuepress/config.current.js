@@ -64,6 +64,7 @@ module.exports = {
               ['/docs/examples/', 'Common Examples'],
               '/docs/examples/google-oauth/',
               '/docs/examples/login-jwt/',
+              '/docs/examples/scheduly/'
             ]
           },
           {
